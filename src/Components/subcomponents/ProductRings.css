@@ -1,0 +1,14 @@
+.check{
+    height:100px;
+    background-color: aqua;
+}
+
+.ringdisplay{
+    height:150px;
+    display:flex;
+    align-items: center;
+    flex-wrap:nowrap;
+    justify-content: center;
+    overflow-x: auto; 
+    padding: 20px;
+}
