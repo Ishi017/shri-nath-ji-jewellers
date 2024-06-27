@@ -1,4 +1,4 @@
-import './Navbar.css'
+import '../../Styles/Navbar.css'
 import logo from '../Assets/main-logo.png'
 import cart from '../Assets/cart.png'
 import DynamicSection from './DynamicNews';

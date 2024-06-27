@@ -1,14 +1,16 @@
 .navbar{
     display: block;
     width:100%;
-     box-shadow: 0px 1px 4px -2px #16096d;
+     box-shadow: 0px 1px 4px -2px #0d0d2e;
+     position:sticky;
+     top:0;
 }
 
 .navbar-news{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #16096d;
+    background-color: #0d0d2e;
     height: 40px;
     color: #f0f4ef;
     font-size: 15px;
@@ -32,7 +34,7 @@
 }
 
 #main-logo:hover{
-    filter:drop-shadow(1px 0 2em #16096d);
+    filter:drop-shadow(1px 0 2em #0d0d2e);
 }
 
 
@@ -118,7 +120,7 @@
     border: 1px solid #7c8178;
     font-size: 15px;
     font-weight: 500;
-    background-color: #16096d;
+    background-color: #0d0d2e;
     color:#f0f4ef;
 }
 
@@ -127,7 +129,7 @@
 }
 
 .nav-login-cart button:active{
-    background: #16096d;
+    background: #0d0d2e;
 }
 
 .cart-count{
@@ -139,7 +141,7 @@
     margin-top:-35px;
     margin-left:-35px;
     border-radius:11px;
-    background-color: #16096d;
+    background-color: #0d0d2e;
     font-size: 12px;
     color:#f0f4ef;
 

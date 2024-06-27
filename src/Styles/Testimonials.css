@@ -1,0 +1,12 @@
+.swiper-container {
+    width: 100%;
+    padding: 20px 0; 
+}
+
+.swiper-pagination-bullet {
+    background: #888; 
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #888; 
+}

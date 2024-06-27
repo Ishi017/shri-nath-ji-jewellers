@@ -1,12 +1,14 @@
-import './Product.css';
+import '../../Styles/Product.css';
 
 export default function Product({image, name}){
 
     return(
+        <div>
     <div className="product">
         <img src={image} alt={name} />
-        <p>{name}</p>
-        <p>hi</p>
+        
+    </div>
+    <p className="productName">{name}</p>
     </div>
     );
 }

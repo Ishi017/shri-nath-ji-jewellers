@@ -1,4 +1,4 @@
-import './SwipeBoards.css';
+import '../../Styles/SwipeBoards.css'
 import { useState } from "react";
 import { useSwipeable} from "react-swipeable";
 import image1 from '../../Components/Assets/swipeboard1.png';
