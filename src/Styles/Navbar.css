@@ -1,9 +1,10 @@
 .navbar{
-    display: block;
-    width:100%;
-     box-shadow: 0px 1px 4px -2px #0d0d2e;
      position:sticky;
      top:0;
+     display: block;
+     width:100%;
+    box-shadow: 0px 1px 4px -2px #0d0d2e;
+    z-index: 1000;
 }
 
 .navbar-news{
@@ -11,7 +12,7 @@
     justify-content: center;
     align-items: center;
     background-color: #0d0d2e;
-    height: 40px;
+    height: 60px;
     color: #f0f4ef;
     font-size: 15px;
 }
@@ -39,12 +40,6 @@
 
 
 
-.mainlogo p{
-    color: #7c8178;
-    font-size: 25px;
-    font-weight: 600;
-}
-
 #main-logo{
    height:100px;
    border-radius: 20%;
@@ -54,7 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#7c8178;
+    /* color:#47841f; */
     text-decoration: none;
 
 }
@@ -65,7 +60,6 @@
     text-decoration: none;
     list-style: none;
     gap:50px;
-    color:#7c8178;
     font-size: 18px;
     font-weight: 500px;
     height:100%;
@@ -79,13 +73,11 @@
     gap: 3px;
     cursor: pointer;
     text-decoration: none;
-
-
 }
 
 #nav-list li a{
   
-    color: #7c8178;
+    color: #3d3e3d;
     text-decoration: none;
     
 }

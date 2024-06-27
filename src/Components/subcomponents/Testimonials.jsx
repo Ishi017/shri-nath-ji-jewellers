@@ -1,10 +1,6 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import CustomerReview from '../subcomponents/CustomerReview';
-import '../../Styles/Testimonials.css'
-import { Pagination, Navigation } from 'swiper'; 
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/css/navigation';  
-import 'swiper/css/pagination'; 
+import '../../Styles/Testimonials.css';
 
 
 
@@ -17,24 +13,21 @@ const reviews = [
 export default function Testimonials(){
 
     return(
-
-    <div className="swiper-container">
-            <Swiper
-                modules={[Pagination, Navigation]}
-                spaceBetween={20} 
-                slidesPerView={2} 
-                loop={true} 
-                pagination={{ clickable: true }} 
-                navigation={true} 
-            >
-                {reviews.map(review => (
-                    <SwiperSlide key={review.id}>
-                        <CustomerReview name={review.name} comment={review.comment} />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+        <div class="Testimonials">
+        <h1>Feedback!</h1>
+         <div className='scroll-container'>
+    
+            {reviews.map((review) => (
+                <CustomerReview
+                    key={review.id}
+                    name={review.name}
+                    comment={review.comment}>
+                    </CustomerReview>
+               
+            ))}
+   
         </div>
-
+        </div>
+       
     );
-
 }

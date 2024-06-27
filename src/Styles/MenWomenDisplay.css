@@ -1,0 +1,38 @@
+.category-recepient{
+
+    /* background-color: #0d0d2e; */
+    height:500px;
+
+}
+
+.category-pictures{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.category-recepient h1{
+    color: #0d0d2e;
+    text-align: center;
+    /* font-style: oblique; */
+}
+
+
+
+.category-pictures img{
+    height:380px;
+    border-radius: 30px;
+    box-shadow: 2px 3px 4px -2px #0d0d2e;
+}
+
+.men{
+    transform: rotate(345deg);
+    margin-right: 40px;
+}
+
+.women{
+    transform: rotate(15deg);
+}

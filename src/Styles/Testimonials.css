@@ -1,12 +1,16 @@
-.swiper-container {
-    width: 100%;
-    padding: 20px 0; 
+.scroll-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    /* overflow-x: scroll; */
+    justify-content: center;
+    margin:15px;
+
+
 }
 
-.swiper-pagination-bullet {
-    background: #888; 
+.Testimonials h1{
+    text-align: center;
+    color: #0d0d2e;
 }
 
-.swiper-button-next, .swiper-button-prev {
-    color: #888; 
-}

@@ -4,13 +4,19 @@ import '../../Styles/CustomerReview.css'
 
 const CustomerReview = ({ name, comment }) => {
     return (
+        
         <div className="CustomerReview">
             
             <img src={InstaLogo} alt="" />
+            <br></br> <br></br>
             <h3>{name}</h3>
-            <p>{comment} via Instagram</p>
+           
+            <p>{comment} </p>
+            <h6>via Instagram</h6>
+            
 
         </div>
+        
     );
 };
 
