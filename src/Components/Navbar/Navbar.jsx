@@ -26,8 +26,8 @@ export default function Navbar(){
         <ul id="nav-list">
          
         <li><Link to="/pickcategory/: latest collection">Latest Collection</Link></li>
-        <li><Link to="/pickcategory/: mensjewellery">Men's Jewellery</Link></li>
-        <li><Link to="/pickcategory/: womensjewellery">Women's Jewellery</Link></li>
+        <li><Link to="/menscategory">Men's Jewellery</Link></li>
+        <li><Link to="/womenscategory">Women's Jewellery</Link></li>
           
         </ul>
         </div>

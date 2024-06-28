@@ -1,0 +1,32 @@
+.womenspage{
+    display: flex;
+
+}
+
+.womensbanner{
+
+    position: absolute;
+    top:208.5px;
+    width:100%;
+    height:300px;
+    background-color: #0d0d2e;
+
+    /* width:100vh; */
+
+}
+
+.womenssidebar{
+
+     width:300px;
+    /* top:0; */
+    top:508.5px;
+    
+    left:0;
+
+
+}
+
+.womenscategory{
+flex:1;
+
+}

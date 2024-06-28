@@ -4,6 +4,7 @@ import Instagram from '../Assets/Socials/Instagram.png';
 import Linkedin from '../Assets/Socials/Linkedin.png';
 import Pinterest from '../Assets/Socials/pinterest.png';
 import LogoBlue from '../Assets/logoBlue.png';
+import {Link} from 'react-router-dom';
 
 
 export default function About(){
@@ -66,8 +67,7 @@ export default function About(){
             </div>
 
             </div>
-
-            <img className="LogoBlue" src={LogoBlue} alt="" />
+            <Link to="https://www.nathdwaratemple.org"> <img className="LogoBlue" src={LogoBlue} alt="" /></Link>
             <h5>2024, Shree Nath Ji Jewellery</h5>
 
         </div>
