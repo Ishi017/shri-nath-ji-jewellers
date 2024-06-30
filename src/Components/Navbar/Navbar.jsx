@@ -1,45 +1,61 @@
-import '../../Styles/Navbar.css'
-import logo from '../Assets/main-logo.png'
-import cart from '../Assets/cart.png'
-import DynamicSection from './DynamicNews';
-import {Link} from 'react-router-dom'
-import logo2 from '../Assets/logo.png'
+import "../../Styles/Navbar.css";
+import logo from "../Assets/main-logo.png";
+import DynamicSection from "./DynamicNews";
+import { Link } from "react-router-dom";
+import logo2 from "../Assets/logo.png";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useState } from "react";
+import LoginPopup from "../subcomponents/LoginPopup";
 
+export default function Navbar() {
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const handleLoginClick = () => {
+    setShowLoginPopup(true);
+  };
 
-
-export default function Navbar(){
-
-   return(
-       
-    <nav className='navbar'>
-          <div className="navbar-news">
-            <DynamicSection/>
-          </div>
-          <div className="navbar-items">
+  const handleClosePopup = () => {
+    setShowLoginPopup(false);
+  };
+  return (
+    <nav className="navbar">
+      <div className="navbar-news">
+        <DynamicSection />
+      </div>
+      <div className="navbar-items">
         <div className="mainlogo">
-            <Link to="/"><img id="main-logo" src={logo} alt=""/></Link>
-            <img className="title" src={logo2} alt="" />
-            
+          <Link to="/">
+            <img id="main-logo" src={logo} alt="" />
+          </Link>
+          <img className="title" src={logo2} alt="" />
         </div>
-        
+
         <div className="navbar-list">
-        <ul id="nav-list">
-         
-        <li><Link to="/pickcategory/: latest collection">Latest Collection</Link></li>
-        <li><Link to="/menscategory">Men's Jewellery</Link></li>
-        <li><Link to="/womenscategory">Women's Jewellery</Link></li>
-          
-        </ul>
+          <ul id="nav-list">
+            <li>
+              <Link to="/pickcategory/: latest collection">
+                Latest Collection
+              </Link>
+            </li>
+            <li>
+              <Link to="/menscategory">Men&apos;s Jewellery</Link>
+            </li>
+            <li>
+              <Link to="/womenscategory">Women&apos;s Jewellery</Link>
+            </li>
+          </ul>
         </div>
 
         <div className="nav-login-cart">
-           <Link to="/login"><button>Login</button></Link> 
-            <Link to="/cart"><img src={cart} alt="" /> </Link>
-            <div className="cart-count">0</div>
+          <Link to="">
+            <button onClick={handleLoginClick}>Login</button>
+          </Link>
+          <Link to="/cart">
+            <AiOutlineShoppingCart className="cart-icon" />
+          </Link>
+          <div className="cart-count">0</div>
         </div>
-        </div>
-
-
+      </div>
+      {showLoginPopup && <LoginPopup onClose={handleClosePopup} />}
     </nav>
-    )
+  );
 }

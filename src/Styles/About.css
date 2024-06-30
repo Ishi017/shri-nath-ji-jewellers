@@ -1,63 +1,64 @@
-.KnowUs{
-    height: 40px;
-    background-color:#cfb9d0;
-    color: #f0f4ef;
-    text-align: center;
+.KnowUs {
+  height: 40px;
+  background-color: #cfb9d0;
+  color: #f0f4ef;
+  text-align: center;
 }
 
-.AboutSnj{
-    background-color: #0d0d2e;
+.AboutSnj {
+  background-color: #0d0d2e;
 }
 
-.AboutSnj h5{
-    color: #f0f4ef;
-    font-weight: 200;
-    margin-left: 10px;
-    margin-bottom: 15px;
+.AboutSnj h5 {
+  color: #f0f4ef;
+  font-weight: 200;
+  margin-left: 10px;
+  margin-bottom: 15px;
 }
 
-.AboutSnj h2{
-    font-weight: 300;
-    color: #0d0d2e;
-
+.AboutSnj h2 {
+  font-weight: 300;
+  color: #0d0d2e;
 }
 
-.KnowUsElements{
-    display: flex;
-    /* align-items: center; */
-    background-color: #0d0d2e;
-    height:600px;
-    justify-content: space-around;
-    color: #f0f4ef;
-    padding-top: 20px;
-
+.KnowUsElements {
+  display: flex;
+  /* align-items: center; */
+  background-color: #0d0d2e;
+  height: 600px;
+  justify-content: space-around;
+  color: #f0f4ef;
+  padding-top: 20px;
 }
 
-.KnowUsElements h3{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+.KnowUsElements h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.SocialLinksSection{
-    text-align: center;
+.SocialLinksSection {
+  text-align: center;
 }
 
-.SocialLinks{
-
-    display: flex;
-    flex-wrap:wrap;
-    flex-direction: column;
-    /* align-items: center; */
-
+.SocialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* align-items: center; */
 }
 
-.SocialLinks img{
-    height:80px;
-    margin:10px;
+.SocialLinks img {
+  height: 80px;
+  margin: 10px;
 }
 
-.LogoBlue{
-    height:300px;
-    align-self: center;
-    margin-left: 36em;
+.LogoBlue {
+  height: 300px;
+  align-self: center;
+  margin-left: 36em;
 }
 
+.footer-icon {
+  color: #fff;
+  font-size: 30px;
+  margin: 10px;
+}
