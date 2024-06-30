@@ -1,140 +1,134 @@
-.navbar{
-     position:sticky;
-     top:0;
-     display: block;
-     width:100%;
-    box-shadow: 0px 1px 4px -2px #0d0d2e;
-    z-index: 1000;
+.navbar {
+  position: sticky;
+  top: 0;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 1px 4px -2px #0d0d2e;
+  z-index: 1000;
 }
 
-.navbar-news{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0d0d2e;
-    height: 60px;
-    color: #f0f4ef;
-    font-size: 15px;
+.navbar-news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d2e;
+  height: 40px;
+  color: #f0f4ef;
+  font-size: 15px;
 }
 
-.navbar-items{
-    display: flex;
-    justify-content: space-around;
-    padding:20px;
-
+.navbar-items {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-.mainlogo{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.mainlogo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.title{
-    height:100px;
+.title {
+  height: 100px;
 }
 
-#main-logo:hover{
-    filter:drop-shadow(1px 0 2em #0d0d2e);
+#main-logo:hover {
+  filter: drop-shadow(1px 0 2em #0d0d2e);
 }
 
-
-
-#main-logo{
-   height:100px;
-   border-radius: 20%;
+#main-logo {
+  height: 100px;
+  border-radius: 20%;
 }
 
-.navbar-list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* color:#47841f; */
-    text-decoration: none;
-
+.navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color:#47841f; */
+  text-decoration: none;
 }
 
-#nav-list{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    list-style: none;
-    gap:50px;
-    font-size: 18px;
-    font-weight: 500px;
-    height:100%;
-
+#nav-list {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  gap: 50px;
+  font-size: 18px;
+  font-weight: 500px;
+  height: 100%;
 }
 
-#nav-list li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    cursor: pointer;
-    text-decoration: none;
+#nav-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-#nav-list li a{
-  
-    color: #3d3e3d;
-    text-decoration: none;
-    
+#nav-list li a {
+  color: #3d3e3d;
+  text-decoration: none;
 }
 
-#nav-list li a:hover{
-  
-   color:#16096d;
-   text-decoration:underline
-
+#nav-list li a:hover {
+  color: #16096d;
+  text-decoration: underline;
 }
 
-.nav-login-cart{
-    display: flex;
-    align-items: center;
-    gap:45px;
+.nav-login-cart {
+  display: flex;
+  align-items: center;
+  gap: 45px;
 }
 
-.nav-login-cart img{
-    height:30px;
+.nav-login-cart img {
+  height: 30px;
 }
 
-.nav-login-cart img:hover{
-   
-   border-bottom: solid 1px #7c8178;
- 
+.nav-login-cart img:hover {
+  border-bottom: solid 1px #7c8178;
 }
 
-.nav-login-cart button{
-    height:60px;
-    width:120px;
-    border-radius: 50px;
-    border: 1px solid #7c8178;
-    font-size: 15px;
-    font-weight: 500;
-    background-color: #0d0d2e;
-    color:#f0f4ef;
+.nav-login-cart button {
+  height: 60px;
+  width: 120px;
+  border-radius: 50px;
+  border: 1px solid #7c8178;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #0d0d2e;
+  color: #f0f4ef;
 }
 
-.nav-login-cart button:hover{
-    background: #7c8178;
+.nav-login-cart button:hover {
+  background: #7c8178;
 }
 
-.nav-login-cart button:active{
-    background: #0d0d2e;
+.nav-login-cart button:active {
+  background: #0d0d2e;
 }
 
-.cart-count{
-    width:22px;
-    height:22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:-35px;
-    margin-left:-35px;
-    border-radius:11px;
-    background-color: #0d0d2e;
-    font-size: 12px;
-    color:#f0f4ef;
+.cart-count {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -35px;
+  margin-left: -35px;
+  border-radius: 11px;
+  background-color: #0d0d2e;
+  font-size: 12px;
+  color: #f0f4ef;
+}
 
+.cart-icon {
+  color: #3d3e3d;
+  height: 30px;
+  width: 30px;
 }

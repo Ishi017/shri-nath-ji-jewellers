@@ -1,21 +1,20 @@
-body{
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    height:100%;
-    width:100%;
-    padding:0;
-    margin :0;
-    /* background-color:rgb(47, 47, 47) ; */
+body {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /* background-color:rgb(47, 47, 47) ; */
 }
 
-.App-nav{
-    
+.App-nav {
 }
 
-.content-container{
-    margin:10px;
-    /* height:calc(100vh-256px);
+.content-container {
+  margin: 10px;
+  /* height:calc(100vh-256px);
     display: flex;
     justify-content: center;
     align-items: center;

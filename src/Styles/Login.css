@@ -1,0 +1,106 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-inner {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 750px;
+  max-height: 90%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.popup-login {
+  padding: 40px;
+  width: 100%;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.heading-container h2 {
+  margin: 0;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+}
+
+.close-icon:hover {
+  color: #645858;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 14px;
+}
+
+.highlight-link {
+  color: #0d0d2e;
+}
+
+.submit-button {
+  height: 60px;
+  width: 120px;
+  border-radius: 50px;
+  border: 1px solid #7c8178;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #0d0d2e;
+  color: #f0f4ef;
+  width: 100%;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #4c586e;
+}
+
+.login-banner {
+  width: 42%;
+  border-radius: 10px;
+}
