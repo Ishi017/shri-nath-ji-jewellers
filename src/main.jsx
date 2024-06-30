@@ -6,9 +6,11 @@ import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Shop from './Pages/Shop'
 import Cart from './Pages/Cart'
 import Login from './Pages/Login'
-import ShopbyCategory from './Pages/ShopbyCategory'
 import MensCategory from './Pages/MensCategory.jsx'
 import WomensCategory from './Pages/WomensCategory.jsx'
+import ProductPage from './Pages/ProductPage.jsx'
+import ItemContainer from './Components/SingleItem/ItemContainer.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -26,10 +28,6 @@ const router = createBrowserRouter([
     element:<><div className='App-nav'><App/> </div> <div className="content-container"><Cart/></div></>
   },
   {
-    path:"/pickcategory/:category",
-    element:<><div className='App-nav'><App/> </div> <div className="content-container"><ShopbyCategory/></div></>
-  },
-  {
     path:"/menscategory",
     element:<><div className='App-nav'><App/> </div> <div className="content-container"><MensCategory/></div></>
   },
@@ -37,8 +35,15 @@ const router = createBrowserRouter([
     path:"/womenscategory",
     element:<><div className='App-nav'><App/> </div> <div className="content-container"><WomensCategory/></div></>
   },
-
- 
+  // {
+  //   path:"/product/:id",
+  //   element:<><div className='App-nav'><App/> </div> <div className="content-container"><ProductPage/></div></>
+  // },
+  // {
+  //   path:"/category/:item",
+  //   element:<><div className='App-nav'><App/> </div> <div className="content-container"><ItemContainer/></div></>
+  // },
+   
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

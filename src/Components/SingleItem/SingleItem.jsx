@@ -1,23 +1,32 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import '../../Styles/SingleItem.css';
+// import { useHistory } from 'react-router-dom';
+
 
 export default function SingleItem({ id, name, image, new_price, old_price,item}){
 
+  // const history = useHistory();
+
+  // const handleClick = () => {
+  //   history.push(`/product/${id}`);
+  // };
+
     return (
-        <div className="product-card">
+        <div className="product-card" >
           <img src={image} alt={name} />
           <div className="cardinfo">
-          <h3>{name}</h3>
-          <p><span className='newPrice'>{new_price}</span>
+          <p><span className='newPrice'>₹{new_price}</span>
           <span className='oldPrice'>{old_price}</span></p>
-          <button>Add to Cart</button>
+          <h3>{name}</h3>
+          <p className='cart'>"cart icon"</p>
           </div>
           {/* <p>Item: {item}</p> */}
         </div>
       );
 
 };
+
+// onClick={handleClick} style={{ cursor: 'pointer' }}
 
 SingleItem.propTypes = {
     id: PropTypes.number.isRequired,

@@ -1,7 +1,7 @@
-import  all_product  from "../Components/Assets/AllProducts.js";
-import SingleItem from "../Components/SingleItem/SingleItem.jsx";
 import ItemContainer from "../Components/SingleItem/ItemContainer.jsx";
 import '../Styles/WomensCategory.css'
+import womensbanner from '../Components/Assets/womensbanner.png';
+import Sidebar from "../Components/Sidebar/Sidebar.jsx";
 
 export default function WomensCategory(){
     // const womenProducts = all_product.filter(product => product.category === "women");
@@ -10,9 +10,15 @@ export default function WomensCategory(){
 <div className="womenspage">
 
 
-      <div className="womensbanner"></div>
+      <div className="womensbanner">
+          <img src={womensbanner} alt="" />
+      </div>
+      <br></br>
+      <hr></hr>
 
-      <div className="womenssidebar"></div>
+      <div className="womenssidebar">
+          <Sidebar/>
+      </div>
 
       <div className="womenscategory">
       
