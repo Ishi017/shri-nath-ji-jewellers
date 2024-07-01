@@ -7,7 +7,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import LoginPopup from "../subcomponents/LoginPopup";
 
-export default function Navbar() {
+export default function Navbar({cart}) {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const handleLoginClick = () => {
     setShowLoginPopup(true);
@@ -52,7 +52,7 @@ export default function Navbar() {
           <Link to="/cart">
             <AiOutlineShoppingCart className="cart-icon" />
           </Link>
-          <div className="cart-count">0</div>
+          <div className="cart-count">{cart.length}</div>
         </div>
       </div>
       {showLoginPopup && <LoginPopup onClose={handleClosePopup} />}
