@@ -4,9 +4,8 @@ import womensbanner from '../Components/Assets/womensbanner.png';
 import Sidebar from "../Components/Sidebar/Sidebar.jsx";
 
 export default function WomensCategory(){
-    // const womenProducts = all_product.filter(product => product.category === "women");
-
-    return (
+ 
+   return (
 <div className="womenspage">
 
 

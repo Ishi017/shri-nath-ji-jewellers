@@ -21,6 +21,11 @@
     flex: 1;
     margin-bottom: 5px;
   }
+
+  .cart-empty{
+      text-align: center;
+      font-size: 2rem;
+  }
   
   /* Header for the cart */
   .cart h2 {

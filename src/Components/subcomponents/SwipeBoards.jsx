@@ -2,7 +2,6 @@ import '../../Styles/SwipeBoards.css'
 import { useState } from "react";
 import { useSwipeable} from "react-swipeable";
 import image1 from '../../Components/Assets/swipeboard1.png';
-import image2 from '../../Components/Assets/swipeboard2.png';
 import image3 from '../../Components/Assets/swipeboard3.png';
 
 export default function Swipeboard(){
@@ -10,7 +9,7 @@ export default function Swipeboard(){
     let [idx,setIdx]=useState(0);
 
     const swipeboards=[
-       image1, image2, image3
+       image1, image3
     ];
 
 

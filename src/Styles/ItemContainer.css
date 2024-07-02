@@ -3,8 +3,8 @@
 .subcategory {
     display: flex; 
     flex-wrap: wrap; 
-    gap: 15px; 
+    gap: 20px; 
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     
   }

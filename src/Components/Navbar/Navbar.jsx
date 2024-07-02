@@ -32,8 +32,8 @@ export default function Navbar({cart}) {
         <div className="navbar-list">
           <ul id="nav-list">
             <li>
-              <Link to="/pickcategory/: latest collection">
-                Latest Collection
+              <Link to="/shopbycategory/Earrings">
+                Shop by Category
               </Link>
             </li>
             <li>

@@ -1,6 +1,5 @@
 import "./App.css";
 import React from 'react'
-// import ReactDOM from 'react-dom/client'
 import Navbar from "./Components/Navbar/Navbar";
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Shop from './Pages/Shop'
@@ -11,6 +10,9 @@ import WomensCategory from './Pages/WomensCategory.jsx'
 import ProductPage from './Pages/ProductPage.jsx'
 import Register from "./Pages/Register.jsx";
 import {useState} from 'react';
+import ShopbyCategory from './Pages/ShopbyCategory.jsx';
+import ItemContainer from "./Components/SingleItem/ItemContainer";
+import ProductRings from "./Components/subcomponents/ProductRings";
 
 
 
@@ -114,6 +116,46 @@ function App() {
         </>
       ),
     },
+    {
+      path:"/shopbycategory/:item",
+      element:(
+      <>
+      <div className="Navbar">
+      <Navbar  cart={cart}/>
+      </div>
+          <div className="content-container">
+            <ShopbyCategory/>
+          </div>
+        </>
+      ),
+    },
+    // {
+    //   path:"/products",
+    //   element:(
+    //   <>
+    //   <div className="Navbar">
+    //   <Navbar  cart={cart}/>
+    //   </div>
+    //       <div className="content-container">
+    //         <ProductRings/>
+    //       </div>
+    //     </>
+    //   ),
+      
+    // }
+    // {
+    //   path:"/product/:item",
+    //   element:(
+    //   <>
+    //   <div className="Navbar">
+    //   <Navbar  cart={cart}/>
+    //   </div>
+    //       <div className="content-container">
+    //         <ItemContainer  category={""} item={item}/>
+    //       </div>
+    //     </>
+    //   ),
+    // },
    
   ]);
   

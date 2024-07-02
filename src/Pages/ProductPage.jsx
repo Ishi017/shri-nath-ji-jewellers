@@ -2,10 +2,6 @@ import { useParams } from 'react-router-dom';
 import {useState} from 'react';
 import all_product from '../Components/Assets/AllProducts.js';
 import '../Styles/ProductPage.css';
-import Cart from './Cart.jsx';
-import {Link} from 'react-router-dom'
-
-
 
 export default function ProductPage({cart,setCart}){
    
