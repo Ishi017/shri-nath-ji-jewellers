@@ -35,7 +35,6 @@ export default function ProductPage({cart,setCart}){
           setCart([...cart, newItem]);
       }
 
-      setCount(1);
   };
 
 
