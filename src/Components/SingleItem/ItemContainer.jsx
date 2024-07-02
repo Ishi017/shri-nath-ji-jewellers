@@ -2,8 +2,8 @@ import  all_product  from "../Assets/AllProducts.js";
 import SingleItem from "../SingleItem/SingleItem.jsx";
 import '../../Styles/ItemContainer.css';
 
-export default function ItemContainer({category}){
-    const filteredProducts = all_product.filter(product => product.category === category);
+export default function ItemContainer({category,item}){
+    const filteredProducts = all_product.filter(product => (product.category === category || product.item=== item));
 
     return (
 

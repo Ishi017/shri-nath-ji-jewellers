@@ -20,12 +20,12 @@ return(
 
     <div className="sidebar-byitem">
         <h4>By Items</h4>
-        <h3>Rings</h3>
-        <h3>Chain</h3>
-        <h3>Payal</h3>
-        <h3>Coins</h3>
-        <h3>Pooja Items</h3>
-        <h3>Earrings</h3>
+        <Link className="sidebar-list-items" to="/shopbycategory/Ring"><h3>Rings</h3></Link>
+        <Link className="sidebar-list-items" to="/shopbycategory/Chain"><h3>Chain</h3></Link>
+        <Link className="sidebar-list-items" to="/shopbycategory/Payal"><h3>Payal</h3></Link>
+        <Link className="sidebar-list-items" to="/shopbycategory/Coins"><h3>Coins</h3></Link>
+        <Link className="sidebar-list-items" to="/shopbycategory/PoojaItems"><h3>Pooja Items</h3></Link>
+        <Link className="sidebar-list-items" to="/shopbycategory/Earrings"><h3>Earrings</h3></Link>
     </div>
 <br></br>
     <div className="sidebar-footer">

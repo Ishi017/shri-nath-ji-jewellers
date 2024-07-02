@@ -1,5 +1,6 @@
 .boards{
    height:300px;
+   /* width:1300px; */
    display:flex;
     background-color: #ffffff;
     text-align: center;

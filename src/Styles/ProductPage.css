@@ -1,0 +1,98 @@
+.product-detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 90px;
+    flex-direction: row;
+    background-color:#fffff9;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.product-image{
+    height:500px;
+    margin-right: 60px;
+    width: 450px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info hr{
+    color: #7c8178;
+}
+
+.product-company{
+    font-size: medium;
+    font-weight: 300;
+    color: #7c8178;
+}
+
+.product-info h2{
+    color: #0d0d2e;
+}
+
+.taxes-mrp{
+    font-size: 0.8rem;
+    font-weight: 20;
+    color: #7c8178;
+}
+
+.newPrice{
+    font-size: 1.5rem;
+    color:#7c8178;
+}
+
+.quantity{
+    width:150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #7c8178;
+    height:40px;
+    color:#7c8178;
+}
+
+.quantity button{
+   border: none;
+   background-color: #fffff9;
+}
+
+.add-to-cart{
+    height:50px;
+    width:90%;
+    align-items: center;
+    background-color: #fffff9;
+    color: #0d0d2e;
+    border-radius: 20px;
+    border: 1px solid #0d0d2e;
+}
+
+.add-to-cart:hover{
+    background-color: #0d0d2e;
+    color: #fffff9;
+}
+
+.buy-it-now{
+    height:50px;
+    width:90%;
+    align-items: center;
+    background-color: #0d0d2e;
+    color: #fffff9;
+    border-radius: 20px;
+    border:none;
+}
+
+.buy-it-now:hover{
+    background-color: #fffff9;
+    color: #0d0d2e;
+    
+}
+
+.productDescription{
+    width:600px;
+    word-wrap: break-word;
+    color: #7c8178;
+    margin-top:30px;
+}
