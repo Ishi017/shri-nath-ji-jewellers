@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import all_product from '../Components/Assets/AllProducts.js';
 import '../Styles/ProductPage.css';
+import addToCartSound from '../Components/Assets/add-to-cart.mp3'
 
 export default function ProductPage({cart,setCart}){
    
@@ -9,6 +10,8 @@ export default function ProductPage({cart,setCart}){
         const product = all_product.find(prod => prod.id === parseInt(id));
 
         const [count, setCount] = useState(1);
+        const [showMessage, setShowMessage] = useState(false);
+        const audioRef = useRef(null);
        
     function handleIncrement() {
     setCount(count + 1);
@@ -20,8 +23,7 @@ export default function ProductPage({cart,setCart}){
         }
     };
 
-
-
+   
     const addToCart = () => {
       const existingItem = cart.find(item => item.id === product.id);
 
@@ -35,11 +37,17 @@ export default function ProductPage({cart,setCart}){
           setCart([...cart, newItem]);
       }
 
+      setShowMessage(true);
+      if (audioRef.current) {
+        audioRef.current.play();
+    }
+      setTimeout(() => setShowMessage(false), 3000); 
+  
+
   };
 
 
 
-      
         if (!product) {
           return <div>Product not found</div>;
         }
@@ -75,10 +83,12 @@ export default function ProductPage({cart,setCart}){
                   <br/> <br/>
                   <button className='buy-it-now'>Buy it Now</button>
               </div>
+              {showMessage && <div className="cart-message">Item added to cart!</div>}
                 
               <p className='productDescription'>{product.description}</p>
              
             </div>
+            <audio ref={audioRef} src={addToCartSound} preload="auto" />
           </div>
         );
       };
