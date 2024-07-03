@@ -9,16 +9,20 @@ import '../Styles/Shop.css';
 export default function Shop(){
     return(
         <div>
+          <br/><br/>  
         <Swipeboard/>
-        <hr></hr>
+        <br/><br/><br/>
+        {/* <hr></hr> */}
         <ProductRings/>
-        <br></br>
+        <br></br><br/><br/><br/>
         <MenWomenDisplay/>
-        <br></br>
-        <br></br>
-        <hr></hr>
+        <br></br><br/><br/>
+        <hr></hr><br/><br/>
         <Testimonials/>
+        <br/><br/><br/> <hr></hr>
+        <br/><br/><br/>
         <img className="PromisesBanner" src={PromisesBanner} alt="" />
+        <br/><br/>
         <About/>
        
         </div>

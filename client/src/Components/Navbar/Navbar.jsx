@@ -9,6 +9,9 @@ import LoginPopup from "../subcomponents/LoginPopup";
 
 export default function Navbar({cart}) {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [dropdownTimer, setDropdownTimer] = useState(null);
+
   const handleLoginClick = () => {
     setShowLoginPopup(true);
   };
@@ -16,6 +19,20 @@ export default function Navbar({cart}) {
   const handleClosePopup = () => {
     setShowLoginPopup(false);
   };
+
+  const handleMouseEnter = () => {
+    clearTimeout(dropdownTimer);
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timer = setTimeout(() => {
+      setShowDropdown(false);
+    }, 100000); // Delay in milliseconds
+    setDropdownTimer(timer);
+  };
+
+
   return (
     <nav className="navbar">
       <div className="navbar-news">
@@ -31,16 +48,31 @@ export default function Navbar({cart}) {
 
         <div className="navbar-list">
           <ul id="nav-list">
-            <li>
+          <li
+              className="dropdown"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <Link to="/shopbycategory/Earrings">
                 Shop by Category
               </Link>
+              {showDropdown && (
+                <ul className="dropdown-menu">
+                  <li><Link to="/shopbycategory/Ring">Rings</Link></li>
+                  <li><Link to="/shopbycategory/Earrings">Earrings</Link></li>
+                  <li><Link to="/shopbycategory/Chain">Chain</Link></li>
+                  <li><Link to="/shopbycategory/Bracelet">Bracelets</Link></li>
+                  <li><Link to="/shopbycategory/PoojaItems">Pooja Items</Link></li>
+                  <li><Link to="/shopbycategory/Coins">Coins</Link></li>
+                  <li><Link to="/shopbycategory/Payal">Payal</Link></li>
+                </ul>
+              )}
             </li>
             <li>
-              <Link to="/menscategory">Men&apos;s Jewellery</Link>
+              <Link to="/mens-category">Men&apos;s Jewellery</Link>
             </li>
             <li>
-              <Link to="/womenscategory">Women&apos;s Jewellery</Link>
+              <Link to="/womens-category">Women&apos;s Jewellery</Link>
             </li>
           </ul>
         </div>

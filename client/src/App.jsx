@@ -78,7 +78,7 @@ function App() {
       ),
     },
     {
-      path: "/menscategory",
+      path: "/mens-category",
       element: (
         <>
          <div className="Navbar">
@@ -91,7 +91,7 @@ function App() {
       ),
     },
     {
-      path: "/womenscategory",
+      path: "/womens-category",
       element: (
         <>
          <div className="Navbar">
