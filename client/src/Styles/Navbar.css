@@ -84,6 +84,7 @@
   justify-content: center;
   /* color:#47841f; */
   text-decoration: none;
+  /* padding:0; */
 }
 
 #nav-list {
@@ -139,6 +140,7 @@
   font-weight: 500;
   background-color: #0d0d2e;
   color: #f0f4ef;
+  cursor: pointer;
 }
 
 .nav-login-cart button:hover {

@@ -68,10 +68,10 @@ export default function Navbar({cart}) {
               )}
             </li>
             <li>
-              <Link to="/menscategory">Men&apos;s Jewellery</Link>
+              <Link to="/mens-category">Men&apos;s Jewellery</Link>
             </li>
             <li>
-              <Link to="/womenscategory">Women&apos;s Jewellery</Link>
+              <Link to="/womens-category">Women&apos;s Jewellery</Link>
             </li>
           </ul>
         </div>

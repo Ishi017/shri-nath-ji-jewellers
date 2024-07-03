@@ -18,7 +18,7 @@ export default function ProductPage({cart,setCart}){
   }
 
     const handleDecrement = () => {
-        if (count > 0) {
+        if (count > 1) {
             setCount(count - 1);
         }
     };

@@ -22,6 +22,7 @@ export default function Shop(){
         <Testimonials/>
         <br/><br/><br/>
         <img className="PromisesBanner" src={PromisesBanner} alt="" />
+        <br/><br/>
         <About/>
        
         </div>

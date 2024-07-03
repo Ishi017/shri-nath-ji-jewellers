@@ -14,8 +14,8 @@ return(
     </div>
     <div className="sidebar-byrecepient">
         <h4>By Recepient:</h4>
-       <Link to="/menscategory"> <h3>Men</h3></Link>
-        <Link to="/womenscategory"><h3>Women</h3></Link>
+       <Link to="/mens-category"> <h3>Men</h3></Link>
+        <Link to="/womens-category"><h3>Women</h3></Link>
     </div>
 
     <div className="sidebar-byitem">

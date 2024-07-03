@@ -13,8 +13,8 @@ export default function MenWomenDisplay(){
 
            <div className="category-pictures">
                
-            <Link to="/menscategory" ><img className="men" src={MenCategory} alt="" /></Link>
-            <Link to="/womenscategory" > <img className="women" src={WomenCategory} alt="" /></Link>
+            <Link to="/mens-category" ><img className="men" src={MenCategory} alt="" /></Link>
+            <Link to="/womens-category" > <img className="women" src={WomenCategory} alt="" /></Link>
             
            </div>
 
