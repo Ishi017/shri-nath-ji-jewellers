@@ -1,34 +1,31 @@
 import "./App.css";
-import React from 'react'
+// import React from 'react'
 import Navbar from "./Components/Navbar/Navbar";
-import { createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Shop from './Pages/Shop'
-import Cart from './Pages/Cart'
-import Login from './Pages/Login'
-import MensCategory from './Pages/MensCategory.jsx'
-import WomensCategory from './Pages/WomensCategory.jsx'
-import ProductPage from './Pages/ProductPage.jsx'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Shop from "./Pages/Shop";
+import Cart from "./Pages/Cart";
+import Login from "./Pages/Login";
+import MensCategory from "./Pages/MensCategory.jsx";
+import WomensCategory from "./Pages/WomensCategory.jsx";
+import ProductPage from "./Pages/ProductPage.jsx";
 import Register from "./Pages/Register.jsx";
-import {useState} from 'react';
-import ShopbyCategory from './Pages/ShopbyCategory.jsx';
-import ItemContainer from "./Components/SingleItem/ItemContainer";
-import ProductRings from "./Components/subcomponents/ProductRings";
-
-
+import { useState } from "react";
+import ShopbyCategory from "./Pages/ShopbyCategory.jsx";
+// import ItemContainer from "./Components/SingleItem/ItemContainer";
+// import ProductRings from "./Components/subcomponents/ProductRings";
 
 function App() {
-
-  const [cart,setCart]=useState([]);
+  const [cart, setCart] = useState([]);
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <> 
-        <div className="Navbar">
-        <Navbar cart={cart} />
-         </div>
-        <div className="content-container">
+        <>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
+          <div className="content-container">
             {" "}
             <Shop />{" "}
           </div>
@@ -38,16 +35,15 @@ function App() {
     {
       path: "/login",
       element: (
-    <>
-        <div className="Navbar">
-        <Navbar  cart={cart}/>
-        </div>
+        <>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
           <div className="content-container">
             {" "}
             <Login />
           </div>
-     
-     </>
+        </>
       ),
     },
     {
@@ -68,9 +64,9 @@ function App() {
       path: "/cart",
       element: (
         <>
-         <div className="Navbar">
-      <Navbar  cart={cart}/>
-      </div>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
           <div className="content-container">
             <Cart cart={cart} setCart={setCart} />
           </div>
@@ -81,9 +77,9 @@ function App() {
       path: "/menscategory",
       element: (
         <>
-         <div className="Navbar">
-      <Navbar  cart={cart}/>
-      </div>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
           <div className="content-container">
             <MensCategory />
           </div>
@@ -94,37 +90,37 @@ function App() {
       path: "/womenscategory",
       element: (
         <>
-         <div className="Navbar">
-      <Navbar  cart={cart}/>
-      </div>
-           <div className="content-container">
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
+          <div className="content-container">
             <WomensCategory />
           </div>
         </>
       ),
     },
     {
-      path:"/product/:id",
-      element:(
-      <>
-      <div className="Navbar">
-      <Navbar  cart={cart}/>
-      </div>
+      path: "/product/:id",
+      element: (
+        <>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
           <div className="content-container">
-            <ProductPage cart={cart} setCart={setCart}/>
+            <ProductPage cart={cart} setCart={setCart} />
           </div>
         </>
       ),
     },
     {
-      path:"/shopbycategory/:item",
-      element:(
-      <>
-      <div className="Navbar">
-      <Navbar  cart={cart}/>
-      </div>
+      path: "/shopbycategory/:item",
+      element: (
+        <>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
           <div className="content-container">
-            <ShopbyCategory/>
+            <ShopbyCategory />
           </div>
         </>
       ),
@@ -141,7 +137,7 @@ function App() {
     //       </div>
     //     </>
     //   ),
-      
+
     // }
     // {
     //   path:"/product/:item",
@@ -156,17 +152,11 @@ function App() {
     //     </>
     //   ),
     // },
-   
   ]);
-  
 
-  
   return (
     <>
-    
-      <RouterProvider router={router}>
-      </RouterProvider>
-
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }

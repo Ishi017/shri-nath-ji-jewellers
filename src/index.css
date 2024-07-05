@@ -12,9 +12,9 @@ body {
 .App-nav {
 }
 
-.content-container{
-    margin-top:10px;
-    /* height:calc(100vh-256px);
+.content-container {
+  /* margin-top:10px; */
+  /* height:calc(100vh-256px);
     display: flex;
     justify-content: center;
     align-items: center;
