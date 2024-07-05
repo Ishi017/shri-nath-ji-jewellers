@@ -1,14 +1,15 @@
 
 .ringdisplay{
-    height:250px;
+    height:270px;
     display:flex;
     align-items: center;
     flex-wrap:wrap;
     justify-content: center;
     overflow-x: scroll; 
-    padding: 20px;
+    padding: 35px;
     gap:40px;
     scroll-behavior: smooth;
     background-color: #0d0d2e;
+    border: none;
 }
 
