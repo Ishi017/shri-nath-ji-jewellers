@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
-import Login from "./Pages/Login";
+// import Login from "./Pages/Login";
 import MensCategory from "./Pages/MensCategory.jsx";
 import WomensCategory from "./Pages/WomensCategory.jsx";
 import ProductPage from "./Pages/ProductPage.jsx";
@@ -32,20 +32,20 @@ function App() {
         </>
       ),
     },
-    {
-      path: "/login",
-      element: (
-        <>
-          <div className="Navbar">
-            <Navbar cart={cart} />
-          </div>
-          <div className="content-container">
-            {" "}
-            <Login />
-          </div>
-        </>
-      ),
-    },
+    // {
+    //   path: "/login",
+    //   element: (
+    //     <>
+    //       <div className="Navbar">
+    //         <Navbar cart={cart} />
+    //       </div>
+    //       <div className="content-container">
+    //         {" "}
+    //         <Login />
+    //       </div>
+    //     </>
+    //   ),
+    // },
     {
       path: "/register",
       element: (

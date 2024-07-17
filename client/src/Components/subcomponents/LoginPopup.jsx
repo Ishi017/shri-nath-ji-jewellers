@@ -5,14 +5,39 @@ import { Link } from "react-router-dom";
 import loginBanner from "../../Components/Assets/LoginPageBanner.png";
 import { IconContext } from "react-icons";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import axios from "axios";
 
 const LoginPopup = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:5174/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true, // To include cookies in the request
+        }
+      );
+      console.log(response.data);
+      // Handle success (e.g., redirect to dashboard, show success message, etc.)
+      if (response.data.message==="Logged in successfully") {
+        // Redirect to a different page or show a success message
+        onClose();
+      } else {
+        // Handle incorrect credentials or other errors
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error("There was an error logging in!", error);
+      // Handle error (e.g., show error message)
+    }
   };
 
   return (
