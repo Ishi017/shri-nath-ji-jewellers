@@ -1,0 +1,98 @@
+.registerContainer {
+  display: flex;
+}
+
+.formRegister {
+  margin: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nameGenderContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectField {
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  width: 52%;
+  margin-bottom: 10px;
+}
+
+.inputField:focus {
+  outline: none;
+}
+
+.inputField {
+  width: 52%;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  padding: 18px 20px;
+}
+
+.name {
+  margin-right: 10px;
+}
+
+.spacing {
+}
+
+.css-art2ul-ValueContainer2 {
+  padding: 10px !important;
+}
+
+.email {
+  width: 100%;
+}
+
+.buttonContainer {
+  margin-top: 30px;
+}
+
+.signupLink {
+  text-align: center;
+  font-size: 14px;
+  width: 42%;
+}
+
+.registerBanner {
+  height: 100vh;
+}
+
+.loginLink {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+.formHeading {
+  margin-top: 78px;
+}
+
+.highlightLink {
+  color: #0d0d2e;
+}
+
+.submitButton {
+  height: 60px;
+  border-radius: 50px;
+  border: 1px solid #7c8178;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #0d0d2e;
+  color: #f0f4ef;
+  width: 100%;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #4c586e;
+}

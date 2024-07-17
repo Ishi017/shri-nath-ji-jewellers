@@ -104,3 +104,12 @@
   width: 42%;
   border-radius: 10px;
 }
+
+svg.revealPwd {
+  fill: #aaaaaa;
+  cursor: pointer;
+  font-size: 1.3rem;
+  position: relative;
+  bottom: 38px;
+  left: 320px;
+}
