@@ -11,6 +11,7 @@ import ProductPage from "./Pages/ProductPage.jsx";
 import Register from "./Pages/Register.jsx";
 import { useState } from "react";
 import ShopbyCategory from "./Pages/ShopbyCategory.jsx";
+import { Toaster } from "react-hot-toast";
 // import ItemContainer from "./Components/SingleItem/ItemContainer";
 // import ProductRings from "./Components/subcomponents/ProductRings";
 
@@ -156,6 +157,7 @@ function App() {
 
   return (
     <>
+      <Toaster position="bottom-center" reverseOrder={false} />
       <RouterProvider router={router}></RouterProvider>
     </>
   );

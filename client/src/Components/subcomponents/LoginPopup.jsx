@@ -6,6 +6,7 @@ import loginBanner from "../../Components/Assets/LoginPageBanner.png";
 import { IconContext } from "react-icons";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 const LoginPopup = ({ onClose }) => {
   const [email, setEmail] = useState("");
@@ -29,14 +30,16 @@ const LoginPopup = ({ onClose }) => {
       // Handle success (e.g., redirect to dashboard, show success message, etc.)
       if (response.data.message==="Logged in successfully") {
         // Redirect to a different page or show a success message
+        toast.success("Login successful!");
         onClose();
       } else {
         // Handle incorrect credentials or other errors
-        alert(response.data.message);
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.error("There was an error logging in!", error);
       // Handle error (e.g., show error message)
+      toast.error(error.response.data.message);
     }
   };
 
