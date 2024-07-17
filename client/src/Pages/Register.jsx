@@ -1,9 +1,10 @@
 import "../Styles/Register.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import axios from "axios";
 import RegisterBanner from "../Components/Assets/register-banner.png";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -17,6 +18,7 @@ const Register = () => {
     { value: "female", label: "Female" },
     { value: "other", label: "Other" },
   ];
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +31,8 @@ const Register = () => {
         password,
       });
       console.log(response.data);
-      // Handle success (e.g., show success message, redirect to login, etc.)
+      navigate("/")
+      toast.success("Registration Successful")
     } catch (error) {
       console.error("There was an error registering the user!", error);
       // Handle error (e.g., show error message)
