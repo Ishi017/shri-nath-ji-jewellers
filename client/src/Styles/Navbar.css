@@ -138,15 +138,16 @@
 }
 
 .nav-login-cart button {
-  height: 60px;
-  width: 120px;
-  border-radius: 12px;
+  height: 45px;
+  width: 100px;
+  border-radius: 4px;
   border: 1px solid #7c8178;
   font-size: 15px;
   font-weight: 500;
   background-color: #0d0d2e;
   color: #f0f4ef;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 @media(max-width:820px){
@@ -156,7 +157,7 @@
 }
 
 .nav-login-cart button:hover {
-  background: #7c8178;
+  background: #1a1a5e;
 }
 
 .nav-login-cart button:active {

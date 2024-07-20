@@ -1,6 +1,8 @@
 import {Link} from 'react-router-dom';
 import '../Styles/Cart.css';
 import cartBanner from '../Components/Assets/cartBanner.png';
+import { IoAdd } from "react-icons/io5";
+import { RiSubtractFill } from "react-icons/ri";
 
 export default function Cart({cart, setCart}){
 
@@ -37,9 +39,9 @@ export default function Cart({cart, setCart}){
                         <h3>{item.name}</h3>
                         <p>Price: Rs.{item.new_price}</p>
                         <div className="cart-quantity">
-                            <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
+                            <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)}><RiSubtractFill/></button>
                             {item.quantity}
-                            <button onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
+                            <button onClick={() => handleQuantityChange(item.id, item.quantity + 1)}><IoAdd /></button>
                         </div>
                     </div>
                     <div className="cart-item-remove">
