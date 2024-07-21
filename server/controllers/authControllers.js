@@ -77,3 +77,27 @@ module.exports.Register = async (req, res, next) => {
     res.status(500).json({ err });
   }
 };
+module.exports.Logout = (req, res) => {
+  const cookieValue = req.cookies;
+  if (cookieValue) {
+    res.cookie("token", "", {
+      maxAge: 0,
+      withCredentials: true,
+      httpOnly: false,
+      secure: true,
+      sameSite: "none",
+    });
+
+    
+    res.clearCookie("connect.sid", { path: "/" });
+
+    req.logout(function (err) {
+      if (err) {
+        return next(err);
+      }
+      res.redirect("/");
+    });
+  } else {
+    res.status(400).send("Cookie not found");
+  }
+};

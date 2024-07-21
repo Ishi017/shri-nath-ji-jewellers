@@ -6,12 +6,16 @@ import loginBanner from "../../Components/Assets/LoginPageBanner.png";
 import { IconContext } from "react-icons";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import axios from "axios";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../Features/isLoggedInSlice";
 
 const LoginPopup = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,10 +30,9 @@ const LoginPopup = ({ onClose }) => {
           withCredentials: true, // To include cookies in the request
         }
       );
-      console.log(response.data);
-      // Handle success (e.g., redirect to dashboard, show success message, etc.)
-      if (response.data.message==="Logged in successfully") {
+      if (response.data.message === "Logged in successfully") {
         // Redirect to a different page or show a success message
+        dispatch(loginUser(true));
         toast.success("Login successful!");
         onClose();
       } else {
@@ -41,6 +44,10 @@ const LoginPopup = ({ onClose }) => {
       // Handle error (e.g., show error message)
       toast.error(error.response.data.message);
     }
+  };
+
+  const handleGoogleLogin = async () => {
+    window.location.href = "http://localhost:5174/auth/google/callback";
   };
 
   return (
@@ -81,18 +88,21 @@ const LoginPopup = ({ onClose }) => {
               <button type="submit" className="submit-button">
                 Login
               </button>
-              <p className="signup-link">
-                Don&apos;t have an account?{" "}
-                <Link
-                  to="/register"
-                  className="highlight-link"
-                  onClick={onClose}
-                >
-                  Sign up
-                </Link>
-              </p>
+            </div>
+            <div className="separator">
+              <span>Or</span>
             </div>
           </form>
+          <button onClick={handleGoogleLogin} className="oAuth">
+            <FcGoogle className="googleIcon" />
+            Continue with Google
+          </button>
+          <p className="signup-link">
+            Don&apos;t have an account?{" "}
+            <Link to="/register" className="highlight-link" onClick={onClose}>
+              Sign up
+            </Link>
+          </p>
         </div>
         <img src={loginBanner} className="login-banner" alt="" />
         <IoClose className="close-icon" onClick={onClose} />

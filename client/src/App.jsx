@@ -33,20 +33,6 @@ function App() {
         </>
       ),
     },
-    // {
-    //   path: "/login",
-    //   element: (
-    //     <>
-    //       <div className="Navbar">
-    //         <Navbar cart={cart} />
-    //       </div>
-    //       <div className="content-container">
-    //         {" "}
-    //         <Login />
-    //       </div>
-    //     </>
-    //   ),
-    // },
     {
       path: "/register",
       element: (
