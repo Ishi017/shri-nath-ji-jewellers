@@ -3,6 +3,8 @@ import {useState, useRef} from 'react';
 import all_product from '../Components/Assets/AllProducts.js';
 import '../Styles/ProductPage.css';
 import addToCartSound from '../Components/Assets/add-to-cart.mp3'
+import { IoAdd } from 'react-icons/io5';
+import { RiSubtractFill } from 'react-icons/ri';
 
 export default function ProductPage({cart,setCart}){
    
@@ -75,7 +77,7 @@ export default function ProductPage({cart,setCart}){
                
               <div className="product-buttons">
                   <div className="quantity">
-                  <button onClick={handleDecrement}>-</button>  {count} <button  onClick={handleIncrement}>+</button>
+                  <button onClick={handleDecrement}><RiSubtractFill/></button>  {count} <button  onClick={handleIncrement}><IoAdd /></button>
                   </div>
                   <br/><br/>
                   <button className='add-to-cart' onClick={addToCart} >Add to Cart</button>

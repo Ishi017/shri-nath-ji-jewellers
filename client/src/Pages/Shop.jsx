@@ -9,7 +9,7 @@ import '../Styles/Shop.css';
 export default function Shop(){
     return(
         <div>
-            <br/><br/>
+        <br/><br/>
         <Swipeboard/>
         <br/><br/>
         <hr></hr><br/><br/>
