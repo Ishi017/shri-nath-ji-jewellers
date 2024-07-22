@@ -49,7 +49,6 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       try {
         let user = await UserModel.findOne({ googleId: profile.id });
-
         if (!user) {
           user = await UserModel.findOne({ email: profile.emails[0].value });
         }
