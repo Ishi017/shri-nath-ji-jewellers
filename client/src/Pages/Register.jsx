@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-const Register = () => {
-  return <div>Register</div>;
-=======
 import "../Styles/Register.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +5,7 @@ import Select from "react-select";
 import axios from "axios";
 import RegisterBanner from "../Components/Assets/register-banner.png";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -27,16 +24,15 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5174/register", {
+       await axios.post("http://localhost:5174/register", {
         name,
         phone,
         gender: gender.value,
         email,
         password,
       });
-      console.log(response.data);
-      navigate("/")
-      toast.success("Registration Successful")
+      navigate("/");
+      toast.success("Registration Successful");
     } catch (error) {
       console.error("There was an error registering the user!", error);
       // Handle error (e.g., show error message)
@@ -95,23 +91,28 @@ const Register = () => {
               required
             />
           </div>
-
           <div className="buttonContainer">
             <button type="submit" className="submitButton">
               Sign up
             </button>
-            <p className="loginLink">
-              Already have an account?{" "}
-              <Link to="/" className="highlightLink">
-                Login
-              </Link>
-            </p>
           </div>
+          <div className="separator">
+            <span>Or</span>
+          </div>
+            <button type="submit" className="oAuth">
+              <FcGoogle className="googleIcon" />
+              Continue with Google
+            </button>
+          <p className="loginLink">
+            Already have an account?{" "}
+            <Link to="/" className="highlightLink">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
     </div>
   );
->>>>>>> Stashed changes
 };
 
 export default Register;

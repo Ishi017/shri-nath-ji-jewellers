@@ -1,28 +1,20 @@
-import '../../Styles/SwipeBoards.css'
-import image1 from '../../Components/Assets/swipeboard1.png';
-import image3 from '../../Components/Assets/swipeboard3.png';
+import "../../Styles/SwipeBoards.css";
+import image1 from "../../Components/Assets/swipeboard1.png";
+import image3 from "../../Components/Assets/swipeboard3.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-// import required modules
-import { Autoplay } from 'swiper/modules';
-
-export default function Swipeboard(){
-
-
-return(
-
-    <div className='boards'>
-        <Swiper
+export default function Swipeboard() {
+  return (
+    <div className="boards">
+      <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -32,7 +24,7 @@ return(
         modules={[Autoplay]}
         className="mySwiper"
       >
-         <SwiperSlide>
+        <SwiperSlide>
           <img src={image1} alt="Swipeboard 1" />
         </SwiperSlide>
         <SwiperSlide>
@@ -40,9 +32,5 @@ return(
         </SwiperSlide>
       </Swiper>
     </div>
-    
-
-  
-);
-
-};
+  );
+}

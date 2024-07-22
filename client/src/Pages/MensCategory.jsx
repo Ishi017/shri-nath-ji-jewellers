@@ -1,32 +1,27 @@
 import ItemContainer from "../Components/SingleItem/ItemContainer.jsx";
-import '../Styles/MensCategory.css'
-import mensbanner from '../Components/Assets/mensbanner.png';
+import "../Styles/MensCategory.css";
+import mensbanner from "../Components/Assets/mensbanner.png";
 import Sidebar from "../Components/Sidebar/Sidebar.jsx";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function MensCategory(){
+export default function MensCategory() {
     
-
-    return (
-<div className="menspage">
-
-
+  return (
+    <div className="menspage">
       <div className="mensbanner">
-          <img src={mensbanner} alt="" />
+        <img src={mensbanner} alt="" />
       </div>
       <br></br>
       <hr></hr>
 
       <div className="menssidebar">
-         <Sidebar/>
+        <Sidebar />
       </div>
 
       <div className="menscategory">
-      
-      <ItemContainer
-          subCategory="MensCategory"
-          category="men"/>
-     </div>
-
-     </div>
-    );
-    }
+        <ItemContainer subCategory="MensCategory" category="men" />
+      </div>
+    </div>
+  );
+}
