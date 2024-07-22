@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import "../../Styles/Navbar.css";
 import logo from "../Assets/main-logo.png";
 import DynamicSection from "./DynamicNews";
@@ -23,12 +24,13 @@ export default function Navbar({ cart }) {
   const dispatch = useDispatch();
 
   const [user, setUser] = useState(null);
+  console.log(import.meta.env.VITE_APP_BASE_URL)
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5174/login/success",
+          `${import.meta.env.VITE_APP_BASE_URL}/login/success`,
           {
             withCredentials: true,
           }
@@ -53,7 +55,7 @@ export default function Navbar({ cart }) {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post("http://localhost:5174/logout",{}, { withCredentials: true });
+      const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/logout`,{}, { withCredentials: true });
       if (response.status === 200) {
         dispatch(loginUser(false));
         toast.success("User Logged Out");

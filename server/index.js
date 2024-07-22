@@ -99,11 +99,13 @@ app.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
+
+
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: `${FRONTEND_LINK}/mens-category`,
-    failureRedirect: FRONTEND_LINK,
+    successRedirect: `${process.env.FRONTEND_LINK}/mens-category`,
+    failureRedirect: `${process.env.FRONTEND_LINK}`,
   })
 );
 

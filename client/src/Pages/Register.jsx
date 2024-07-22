@@ -24,7 +24,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-       await axios.post("http://localhost:5174/register", {
+       await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/register`, {
         name,
         phone,
         gender: gender.value,

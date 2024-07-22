@@ -21,7 +21,7 @@ const LoginPopup = ({ onClose }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5174/login",
+        `${import.meta.env.VITE_APP_BASE_URL}/login`,
         {
           email,
           password,
@@ -47,7 +47,7 @@ const LoginPopup = ({ onClose }) => {
   };
 
   const handleGoogleLogin = async () => {
-    window.location.href = "http://localhost:5174/auth/google/callback";
+    window.location.href = `${import.meta.env.VITE_APP_BASE_URL}/auth/google/callback`;
   };
 
   return (
