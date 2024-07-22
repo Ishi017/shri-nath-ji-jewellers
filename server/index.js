@@ -102,8 +102,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173/mens-category",
-    failureRedirect: "http://localhost:5173",
+    successRedirect: `${FRONTEND_LINK}/mens-category`,
+    failureRedirect: FRONTEND_LINK,
   })
 );
 
