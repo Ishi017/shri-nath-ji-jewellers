@@ -47,7 +47,7 @@ const LoginPopup = ({ onClose }) => {
   };
 
   const handleGoogleLogin = async () => {
-    window.location.href = `${import.meta.env.VITE_APP_BASE_URL}/auth/google/callback`;
+    window.location.href = `${import.meta.env.VITE_APP_BASE_URL}/auth/google`;
   };
 
   return (
