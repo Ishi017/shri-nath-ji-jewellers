@@ -43,7 +43,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_OAUTH_CLIENTID,
       clientSecret: process.env.GOOGLE_OAUTH_CLIENTSECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: process.env.GOOGLE_OAUTH_REDIRECT_URI,
       scope: ["profile", "email"],
     },
     async (accessToken, refreshToken, profile, done) => {
