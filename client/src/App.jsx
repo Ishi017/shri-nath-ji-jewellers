@@ -1,7 +1,7 @@
 import "./App.css";
 // import React from 'react'
 import Navbar from "./Components/Navbar/Navbar";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter , BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
 // import Login from "./Pages/Login";
@@ -141,10 +141,52 @@ function App() {
     // },
   ]);
 
+  // return (
+  //   <>
+  //     <Toaster position="bottom-center" reverseOrder={false} />
+  //     <RouterProvider router={router}></RouterProvider>
+  //   </>
+  // );
   return (
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
-      <RouterProvider router={router}></RouterProvider>
+      <BrowserRouter>
+        <div className="Navbar">
+          <Navbar cart={cart} />
+        </div>
+        <div className="content-container">
+          <Routes>
+            <Route
+              path="/"
+              element={<Shop />}
+            />
+            <Route
+              path="/register"
+              element={<Register />}
+            />
+            <Route
+              path="/cart"
+              element={<Cart cart={cart} setCart={setCart} />}
+            />
+            <Route
+              path="/mens-category"
+              element={<MensCategory />}
+            />
+            <Route
+              path="/womens-category"
+              element={<WomensCategory />}
+            />
+            <Route
+              path="/product/:id"
+              element={<ProductPage cart={cart} setCart={setCart} />}
+            />
+            <Route
+              path="/shopbycategory/:item"
+              element={<ShopbyCategory />}
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
