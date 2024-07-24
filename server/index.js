@@ -26,10 +26,7 @@ app.use(
     secret: "ddlbljdaljbaljbludkbdg",
     resave: false,
     saveUninitialized: true,
-    cookie: process.env.NODE_ENV === 'production' ? {
-      sameSite: "none",
-      secure: true
-    } :{}
+    cookie:{}
   })
 );
 
