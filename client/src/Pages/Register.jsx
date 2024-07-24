@@ -38,6 +38,7 @@ const Register = () => {
       // Handle error (e.g., show error message)
     }
   };
+  
   return (
     <div className="registerContainer">
       <img src={RegisterBanner} alt="" className="registerBanner" />

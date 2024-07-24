@@ -3,14 +3,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height:320px;
-    width:600px;
     background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 2px 3px 4px -2px #0d0d2e;
-    margin:15px;
-    padding: 9px;
-}
+    margin: 10px;
+    padding: 20px;
+    width: 400px;
+    max-width: 600px;
+    height: auto;
+  }
 
 .CustomerReview img{
     height:50px;
@@ -27,8 +28,40 @@
     margin: 0;
     font-size: 1em;
     text-align: center;
+    word-wrap: break-word;
 }
 
 .CustomerReview h6{
     font-weight: 200;
 }
+
+/* smartphones */
+@media (max-width: 600px) {
+    .CustomerReview {
+      padding: 15px;
+    }
+  
+    .CustomerReview h3 {
+      font-size: 1em;
+    }
+  
+    .CustomerReview p {
+      font-size: 0.9em;
+    }
+  }
+  
+  /* tablets */
+  @media (min-width: 601px) and (max-width: 1200px) {
+    .CustomerReview {
+      padding: 15px;
+      width:220px;
+    }
+  
+    .CustomerReview h3 {
+      font-size: 1.1em;
+    }
+  
+    .CustomerReview p {
+      font-size: 0.95em;
+    }
+  }

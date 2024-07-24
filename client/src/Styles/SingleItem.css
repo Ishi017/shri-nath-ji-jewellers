@@ -1,68 +1,111 @@
-.product-card{
-
-    height:420px;
-    width:250px;
-    margin-bottom:30px;
+.product-card {
+    height: 26.25em;
+    width: 15.62em;
+    margin-bottom: 1.875em;
     background-color: #fffff9;
-    border-radius: 30px;
+    border-radius: 1.875em;
     box-shadow: 0 -1px 2px rgb(13, 13, 46);
     box-shadow: 6px 8px 2px 1px #0d0d2e4d;
     cursor: pointer;
-}
-
-.cardinfo{
-
-    background-color:#fffff9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 4px 2px #0d0d2e4d;
+  }
+  
+  .cardinfo {
+    background-color: #fffff9;
     margin: 0;
-    /* text-align: center; */
     border-radius: 0 0 12px 12px;
-    /* text-align: left; */
-
-}
-
-.product-card img{
-    height:250px;
-    width:250px;
+  }
+  
+  .product-card img {
+    height: 250px;
+    width: 250px;
     object-fit: cover;
-    margin:0;
+    margin: 0;
     border-radius: 26px 26px 0 0;
-
-
-}
-
-.product-card h3{
-
+  }
+  
+  .product-card h3 {
     color: #0d0d2e;
     font-size: 16px;
     padding-top: 15px;
     font-weight: 300;
     text-align: center;
-
-    font-family:Georgia, 'Times New Roman', Times, serif
-
-
-}
-
-.newPrice{
-
-    text-decoration:solid;
-    color:#0d0d2e;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .newPrice {
+    text-decoration: solid;
+    color: #0d0d2e;
     margin-right: 10px;
     margin-left: 10px;
     font-size: 26px;
-    text-align:left;
-    
-}
-
-.oldPrice{
-
+    text-align: left;
+  }
+  
+  .oldPrice {
     text-decoration: line-through;
-    color:rgb(183, 98, 98);
-}
-
-
-
-.cart-singleitem{
-  text-align:center ;
-
-}
+    color: rgb(183, 98, 98);
+  }
+  
+  .cart-singleitem {
+    text-align: center;
+  }
+  
+  /* smartphones */
+  @media (max-width: 600px) {
+    .product-card {
+      height: 320px;
+      width: 200px;
+      margin-bottom: 20px;
+    }
+  
+    .product-card img {
+      height: 150px;
+      width: 200px;
+    }
+  
+    .product-card h3 {
+      font-size: 10px;
+      padding-top: 8px;
+    }
+  
+    .newPrice {
+      font-size: 15px;
+    }
+  
+    .oldPrice {
+      font-size: 10px;
+    }
+  }
+  
+  /* tablets*/
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .product-card {
+      height: 380px;
+      width: 220px;
+      margin-bottom: 25px;
+    }
+  
+    .product-card img {
+      height: 200px;
+      width: 220px;
+    }
+  
+    .product-card h3 {
+      font-size: 15px;
+      padding-top: 12px;
+    }
+  
+    .newPrice {
+      font-size: 24px;
+    }
+  
+    .oldPrice {
+      font-size: 16px;
+    }
+  }

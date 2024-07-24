@@ -53,9 +53,32 @@
 
 .LogoBlue {
   height: 300px;
-  align-self: center;
-  padding-left: 34rem;
+  /* align-self: center; */
+  /* padding-left: 34rem; */
 }
+
+.about-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+@media (max-width : 800px){
+ .KnowUsElements h3,h4{
+  font-size: smaller;
+  }
+
+  .LogoBlue{
+   height:250px;
+  }
+}
+
+@media (max-width : 700px){
+     .LogoBlue{
+    height:200px;
+   }
+ }
 
 .footer-icon {
   color: #fff;

@@ -29,8 +29,8 @@ export default function ProductRings(){
     <div className="ringdisplay">
 
             {products.map(product => (
-                <Link to={`/shopbycategory/${product.item}`}>
-                <Product key={product.id} name={product.name} image={product.image} />
+                <Link key={product.id} to={`/shopbycategory/${product.item}`}>
+                <Product  name={product.name} image={product.image} />
                 </Link>
             ))}
        

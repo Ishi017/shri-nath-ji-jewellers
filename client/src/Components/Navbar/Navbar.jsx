@@ -92,15 +92,17 @@ export default function Navbar({ cart }) {
   const handleProfileMouseLeave = () => {
     const timer = setTimeout(() => {
       setShowProfileDropdown(false);
-    }, 2000);
+    }, 4000);
     setProfileDropdownTimer(timer);
   };
 
   return (
     <nav className="navbar">
+      
       <div className="navbar-news">
         <DynamicSection />
       </div>
+      
       <div className="navbar-items">
         <div className="mainlogo">
           <Link to="/">
@@ -143,80 +145,105 @@ export default function Navbar({ cart }) {
                 </ul>
               )}
             </li>
+
             <li>
-              <Link to="/mens-category">Men&apos;s Jewellery</Link>
+            <Link to="/mens-category">Men&apos;s Jewellery</Link>
             </li>
             <li>
-              <Link to="/womens-category">Women&apos;s Jewellery</Link>
+            <Link to="/womens-category">Women&apos;s Jewellery</Link>
             </li>
           </ul>
         </div>
 
         <div className="nav-login-cart">
-          {isLoggedIn ? (
-            <>
-              <button onClick={handleLogout}>Logout</button>
-             {user?.image ? <img
-                src={user?.image}
-                alt=""
-                style={{
-                  backgroundColor: "#ccc",
-                  borderRadius: "50%",
-                  width: "50px",
-                  height: "50px",
-                  display: "inline-block",
-                }}
-              />:<RxAvatar
-              className="avatar-icon dropdown"
-              onMouseEnter={handleProfileMouseEnter}
-              onMouseLeave={handleProfileMouseLeave}
-            />}
-              {showProfileDropdown && (
-                <ul className="dropdown-menu">
-                  <Link to="/profile">
-                    <li>Profile</li>
-                  </Link>
-                  <Link to="/orders">
-                    <li>Orders</li>
-                  </Link>
-                  <Link to="/settings">
-                    <li>Settings</li>
-                  </Link>
-                  <li onClick={handleLogout}>Logout</li>
-                </ul>
-              )}
-            </>
-          ) : (
-            <>
-              <button onClick={handleLoginClick}>Login</button>
-              <RxAvatar
-                className="avatar-icon dropdown"
-                onMouseEnter={handleProfileMouseEnter}
-                onMouseLeave={handleProfileMouseLeave}
-              />
-            </>
-          )}
-          {showProfileDropdown && (
-            <ul className="dropdown-menu">
-              <Link to="/profile">
-                <li>Profile</li>
-              </Link>
-              <Link to="/orders">
-                <li>Orders</li>
-              </Link>
-              <Link to="/settings">
-                <li>Settings</li>
-              </Link>
-              <li onClick={handleLoginClick}>Logout</li>
-            </ul>
-          )}
-          <Link to="/cart">
-            <AiOutlineShoppingCart className="cart-icon" />
-          </Link>
-          <div className="cart-count">{cart.length}</div>
+          
+
+
+
+   {/* LOGIN_LOGOUT */}
+  {isLoggedIn ? (
+  <>
+    {/* Show profile dropdown menu if user is logged in */}
+    
+    <div
+      className="dropdown"
+      onMouseEnter={handleProfileMouseEnter}
+      onMouseLeave={handleProfileMouseLeave}
+    >
+
+    {showProfileDropdown && (
+      <ul className="dropdown-menu">
+       
+      <li><Link to="/userinfo">Profile</Link></li>
+      <li> <Link to="/userinfo/orders">Orders</Link></li>
+      <li><Link to="/userinfo/settings">Settings</Link></li>
+    
+        {/* Logout option for logged-in users */}
+        <li onClick={handleLogout}>Logout</li>
+      </ul>
+    )}
+
+    {/* Display user image if available */}
+    {user?.image ? (
+      <img className="login-user-image"
+        src={user.image}
+        alt="User"
+        onMouseEnter={handleProfileMouseEnter}
+        onMouseLeave={handleProfileMouseLeave}
+      />
+    ) : (
+      // Default avatar icon if no user image
+      <RxAvatar
+        className="avatar-icon"
+        onMouseEnter={handleProfileMouseEnter}
+        onMouseLeave={handleProfileMouseLeave}
+      />
+    )}
+    </div>
+  </>
+) : (
+  <>
+    {/* Show login button if user is not logged in */}
+    {/* <button onClick={handleLoginClick}>Login</button> */}
+
+    <div
+      className="dropdown"
+      onMouseEnter={handleProfileMouseEnter}
+      onMouseLeave={handleProfileMouseLeave}
+    >
+    {/* Default avatar icon for guest users */}
+    <RxAvatar
+      className="avatar-icon "
+      onMouseEnter={handleProfileMouseEnter}
+      onMouseLeave={handleProfileMouseLeave}
+    />
+
+    {/* Show dropdown menu for guest users if active */}
+    {showProfileDropdown && (
+      <ul className="dropdown-menu">
+       
+          <li onClick = {handleLoginClick}>Login </li>
+          <li><Link to="/settings">Settings</Link></li>
+          <li><Link to="/faq">FAQ</Link></li>
+        
+      </ul>
+    )}
+     </div>
+  </>
+)}
+
+
+{/* Cart */}
+<Link to="/cart">
+<AiOutlineShoppingCart className="cart-icon" />
+</Link>
+
+       {/* Display number of items in the cart */}
+        <div className="cart-count">{cart.length}</div>
         </div>
-      </div>
-      {showLoginPopup && <LoginPopup onClose={handleClosePopup} />}
+  </div>
+
+    {showLoginPopup && <LoginPopup onClose={handleClosePopup} />}
     </nav>
   );
 }

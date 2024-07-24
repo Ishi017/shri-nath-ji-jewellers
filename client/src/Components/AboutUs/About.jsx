@@ -83,10 +83,12 @@ export default function About() {
           <h4>- pankjain211@gmail.com</h4>
         </div>
       </div>
+      <div className="about-logo">
       <Link to="https://www.nathdwaratemple.org">
         {" "}
         <img className="LogoBlue" src={LogoBlue} alt="" />
       </Link>
+      </div>
       <h5>2024, Shree Nath Ji Jewellery</h5>
     </div>
   );

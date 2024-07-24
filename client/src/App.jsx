@@ -12,6 +12,7 @@ import Register from "./Pages/Register.jsx";
 import { useState } from "react";
 import ShopbyCategory from "./Pages/ShopbyCategory.jsx";
 import { Toaster } from "react-hot-toast";
+import UserDetails from "./Pages/UserDetails";
 // import ItemContainer from "./Components/SingleItem/ItemContainer";
 // import ProductRings from "./Components/subcomponents/ProductRings";
 
@@ -112,6 +113,8 @@ function App() {
         </>
       ),
     },
+
+
     // {
     //   path:"/products",
     //   element:(
@@ -184,6 +187,11 @@ function App() {
               path="/shopbycategory/:item"
               element={<ShopbyCategory />}
             />
+             <Route
+              path="/userinfo"
+              element={<UserDetails />}
+            />
+            
           </Routes>
         </div>
       </BrowserRouter>
