@@ -19,13 +19,16 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.use(
   session({
     secret: "ddlbljdaljbaljbludkbdg",
     resave: false,
     saveUninitialized: true,
+    cookie: {
+      sameSite: "none"
+    }
   })
 );
 
