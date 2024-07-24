@@ -155,7 +155,7 @@ export default function Navbar({ cart }) {
         <div className="nav-login-cart">
           {isLoggedIn ? (
             <>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={handleLogin}>Logout</button>
              {user?.image ? <img
                 src={user?.image}
                 alt=""
