@@ -26,13 +26,14 @@ app.use(
     secret: "ddlbljdaljbaljbludkbdg",
     resave: false,
     saveUninitialized: true,
-    // cookie: {
-    //   sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-    //   secure: process.env.NODE_ENV === "production", // Requires HTTPS
-    // },
+    cookie: {
+      // sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      // secure: process.env.NODE_ENV === "production", // Requires HTTPS
+      secure: "auto",
+      httpOnly: "auto",
+    },
   })
 );
-
 
 app.get("/", (req, res) => {
   res.send("Welcome to the application!");
@@ -102,8 +103,6 @@ app.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
-
-
 
 app.get(
   "/auth/google/callback",
