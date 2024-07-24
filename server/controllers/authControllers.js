@@ -79,13 +79,6 @@ module.exports.Register = async (req, res, next) => {
 };
 module.exports.Logout = (req, res) => {
   const cookieValue = req.cookies;
-  res.cookie("token", token, {
-    maxAge: 1000 * 60 * 60 * 24 * 3,
-    withCredentials: true,
-    httpOnly: false,
-    secure: true,
-    sameSite: "none",
-  });
   if (cookieValue) {
     res.cookie("token", "", {
       maxAge: 0,
