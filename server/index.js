@@ -28,6 +28,10 @@ app.use(
     saveUninitialized: true,
     cookie: {
       sameSite: "none",
+      maxAge: 1000 * 60 * 60 * 24 * 3,
+      withCredentials: true,
+      httpOnly: false,
+      secure: true,
     }
   })
 );
