@@ -27,11 +27,12 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      // sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-      // secure: process.env.NODE_ENV === "production", // Requires HTTPS
-      secure: "auto",
-      httpOnly: "auto",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production", // Requires HTTPS
+      // secure: "auto",
+      // httpOnly: "auto",
     },
+    proxy: true,
   })
 );
 
