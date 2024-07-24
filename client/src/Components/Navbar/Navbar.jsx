@@ -51,6 +51,7 @@ export default function Navbar({ cart }) {
   const handleLoginClick = () => {
     setShowLoginPopup(true);
   };
+  
 
 
   const handleLogout = async () => {
