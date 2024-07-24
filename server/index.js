@@ -26,10 +26,10 @@ app.use(
     secret: "ddlbljdaljbaljbludkbdg",
     resave: false,
     saveUninitialized: true,
-    cookie: {
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-      secure: process.env.NODE_ENV === "production", // Requires HTTPS
-    },
+    // cookie: {
+    //   sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    //   secure: process.env.NODE_ENV === "production", // Requires HTTPS
+    // },
   })
 );
 
