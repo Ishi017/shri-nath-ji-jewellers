@@ -51,9 +51,6 @@ export default function Navbar({ cart }) {
   const handleLoginClick = () => {
     setShowLoginPopup(true);
   };
-
-  dispatch(loginUser(false));
-
   
 
 
