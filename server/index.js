@@ -19,7 +19,7 @@ app.use(
   })
 );
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 
 app.use(
   session({
@@ -27,11 +27,12 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      sameSite: "none",
-    }
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production", // Requires HTTPS
+    },
+    proxy: true,
   })
 );
-
 
 app.get("/", (req, res) => {
   res.send("Welcome to the application!");
@@ -72,7 +73,6 @@ passport.use(
 
           await user.save();
         }
-
         return done(null, user);
       } catch (error) {
         return done(error, null);
@@ -101,8 +101,6 @@ app.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
-
-
 
 app.get(
   "/auth/google/callback",
