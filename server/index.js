@@ -51,6 +51,7 @@ passport.use(
       clientSecret: process.env.GOOGLE_OAUTH_CLIENTSECRET,
       callbackURL: process.env.GOOGLE_OAUTH_REDIRECT_URI,
       scope: ["profile", "email"],
+      prompt: "consent",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
