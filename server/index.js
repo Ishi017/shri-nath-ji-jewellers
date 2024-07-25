@@ -29,8 +29,6 @@ app.use(
     cookie: {
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       secure: process.env.NODE_ENV === "production", // Requires HTTPS
-      // secure: "auto",
-      // httpOnly: "auto",
     },
     proxy: true,
   })
@@ -75,7 +73,6 @@ passport.use(
 
           await user.save();
         }
-
         return done(null, user);
       } catch (error) {
         return done(error, null);
