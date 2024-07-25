@@ -24,6 +24,7 @@ export default function Navbar({ cart }) {
   const dispatch = useDispatch();
 
   const [user, setUser] = useState(null);
+  console.log(import.meta.env.VITE_APP_BASE_URL);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -94,7 +95,7 @@ export default function Navbar({ cart }) {
   const handleProfileMouseLeave = () => {
     const timer = setTimeout(() => {
       setShowProfileDropdown(false);
-    }, 4000);
+    }, 2000);
     setProfileDropdownTimer(timer);
   };
 
@@ -161,14 +162,25 @@ export default function Navbar({ cart }) {
           {isLoggedIn ? (
             <>
               {/* Show profile dropdown menu if user is logged in */}
-
               <div
-                className="dropdown"
-                onMouseEnter={handleProfileMouseEnter}
-                onMouseLeave={handleProfileMouseLeave}
+                className="dropdown-user"
+                onMouseEnter={() => setShowProfileDropdown(true)}
+                onMouseLeave={() => setShowProfileDropdown(false)}
               >
+                {/* Display user image if available */}
+                {user?.image ? (
+                  <img
+                    className="login-user-image"
+                    src={user.image}
+                    alt="User"
+                  />
+                ) : (
+                  // Default avatar icon if no user image
+                  <RxAvatar className="avatar-icon" />
+                )}
+
                 {showProfileDropdown && (
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu-user">
                     <li>
                       <Link to="/userinfo">Profile</Link>
                     </li>
@@ -179,52 +191,29 @@ export default function Navbar({ cart }) {
                     <li>
                       <Link to="/userinfo/settings">Settings</Link>
                     </li>
-
                     {/* Logout option for logged-in users */}
                     <li onClick={handleLogout}>Logout</li>
                   </ul>
-                )}
-
-                {/* Display user image if available */}
-                {user?.image ? (
-                  <img
-                    className="login-user-image"
-                    src={user.image}
-                    alt="User"
-                    onMouseEnter={handleProfileMouseEnter}
-                    onMouseLeave={handleProfileMouseLeave}
-                  />
-                ) : (
-                  // Default avatar icon if no user image
-                  <RxAvatar
-                    className="avatar-icon"
-                    onMouseEnter={handleProfileMouseEnter}
-                    onMouseLeave={handleProfileMouseLeave}
-                  />
                 )}
               </div>
             </>
           ) : (
             <>
               {/* Show login button if user is not logged in */}
-              {/* <button onClick={handleLoginClick}>Login</button> */}
+              <button onClick={handleLoginClick}>Login</button>
 
               <div
-                className="dropdown"
-                onMouseEnter={handleProfileMouseEnter}
-                onMouseLeave={handleProfileMouseLeave}
+                className="dropdown-user"
+                onMouseEnter={() => setShowProfileDropdown(true)}
+                onMouseLeave={() => setShowProfileDropdown(false)}
               >
                 {/* Default avatar icon for guest users */}
-                <RxAvatar
-                  className="avatar-icon "
-                  onMouseEnter={handleProfileMouseEnter}
-                  onMouseLeave={handleProfileMouseLeave}
-                />
+                <RxAvatar className="avatar-icon " />
 
                 {/* Show dropdown menu for guest users if active */}
                 {showProfileDropdown && (
-                  <ul className="dropdown-menu">
-                    <li onClick={handleLoginClick}>Login </li>
+                  <ul className="dropdown-menu-user">
+                    <li onClick={handleLoginClick}>Login</li>
                     <li>
                       <Link to="/settings">Settings</Link>
                     </li>
