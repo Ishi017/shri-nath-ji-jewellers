@@ -9,8 +9,8 @@ const ProductSchema = new mongoose.Schema({
   images: [{ type: String, required: true }],
   material: { type: String },
   weight: { type: Number },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+}, {
+  timestamps: true 
 });
 
 const ProductModel = mongoose.model("ProductsCollection", ProductSchema);
