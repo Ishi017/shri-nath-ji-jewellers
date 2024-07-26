@@ -2,7 +2,7 @@
     /* padding-right: 15px; */
     /* padding-bottom: 50px; */
     margin-right:20px ;
-    background-color: #0d0d2e;
+    background-color: #fffff9;
     height:100%;
     margin-top:20px ;
 }
@@ -18,9 +18,9 @@
 
 .sidebar-byrecepient {
 
-   background-color: #0d0d2e;
+   background-color: #fffff9;
    /* border-radius: 20px; */
-   color:#fffff9;
+   color:#0d0d2e;
    padding:15px;
    margin-bottom: 30px;
 }
@@ -45,14 +45,14 @@
 .sidebar-byrecepient a{
 
   text-decoration: none;
-  color: #fffff9;
+  color: #0d0d2e;
 }
 
 .sidebar-byitem {
 
-    background-color: #0d0d2e;
+    background-color: #fffff9;
     /* border-radius: 20px; */
-    color:#fffff9;
+    color:#0d0d2e;
     padding:15px;
  }
  
@@ -76,5 +76,5 @@
 
  .sidebar-list-items{
      text-decoration: none;
-     color:#fffff9;
+     color:#0d0d2e;
  }

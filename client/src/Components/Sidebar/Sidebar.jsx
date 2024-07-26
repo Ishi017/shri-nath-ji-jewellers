@@ -1,8 +1,7 @@
-import logo from '../Assets/logoBlue.png';
+import logo from '../Assets/logooffwhite.png';
 import '../../Styles/Sidebar.css'
 import {Link} from 'react-router-dom'
 import Sale from '../Assets/Sale.png'
-import sidebannerPromises from '../Assets/sidebanner-promises.png'
 
 export default function Sidebar(){
 
