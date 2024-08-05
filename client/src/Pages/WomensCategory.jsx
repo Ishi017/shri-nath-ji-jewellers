@@ -1,35 +1,23 @@
 import ItemContainer from "../Components/SingleItem/ItemContainer.jsx";
-import '../Styles/WomensCategory.css'
-import womensbanner from '../Components/Assets/womensbanner.png';
-import Sidebar from "../Components/Sidebar/Sidebar.jsx";
+import "../Styles/WomensCategory.css";
+import womensbanner from "../Components/Assets/womensbanner.png";
 
-export default function WomensCategory(){
- 
-   return (
-<div className="womenspage">
-
-
+export default function WomensCategory() {
+  return (
+    <div className="womenspage">
       <div className="womensbanner">
-          <img src={womensbanner} alt="" />
+        <img src={womensbanner} alt="" />
       </div>
       <br></br>
       <hr></hr>
 
-      <div className="womenssidebar">
-          <Sidebar/>
-      </div>
-
       <div className="womenscategory">
-      
-      <ItemContainer
-          subCategory="WomensCategory"
-          category="women"/>
-     </div>
-
-     </div>
-    );
-    }
-
-  
-
-
+        <div className="heading-banner">
+          {" "}
+          <h1>Women&apos;s Jewellery</h1>
+        </div>
+        <ItemContainer subCategory="WomensCategory" category="women" />
+      </div>
+    </div>
+  );
+}

@@ -52,15 +52,11 @@ export default function ProductPage({ cart, setCart }) {
 
   return (
     <div className="product-detail">
-      <div className="product-image">
-        <img src={product.image} alt={product.name} />
+      <div className="">
+        <img src={product.image} alt={product.name} className="product-image" />
       </div>
       <div className="product-info">
-        <p className="product-company">shree nath ji jewellers</p>
-
         <h2>{product.name}</h2>
-        <hr />
-
         <p>
           <span className="newPrice">Rs.{product.new_price}</span>
           <span className="oldPrice">Rs.{product.old_price}</span>
@@ -68,9 +64,6 @@ export default function ProductPage({ cart, setCart }) {
             <p className="taxes-mrp">*MRP is all inclusive of all taxes</p>
           </span>
         </p>
-
-        <hr />
-
         <div className="product-buttons">
           <div className="quantity">
             <button onClick={handleDecrement}>
@@ -82,13 +75,12 @@ export default function ProductPage({ cart, setCart }) {
             </button>
           </div>
           <br />
-          <br />
-          <button className="add-to-cart" onClick={addToCart}>
-            Add to Cart
-          </button>
-          {/* <Link to='/cart'><Cart/></Link> */}
-          <br /> <br />
-          <button className="buy-it-now">Buy it Now</button>
+          <div  className="buttons-div">
+            <button className="add-to-cart" onClick={addToCart}>
+              Add to Cart
+            </button>
+            <button className="buy-it-now">Buy it Now</button>
+          </div>
         </div>
         {showMessage && <div className="cart-message">Item added to cart!</div>}
 

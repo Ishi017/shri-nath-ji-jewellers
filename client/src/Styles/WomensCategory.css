@@ -40,8 +40,8 @@
 
 .womenscategory{
 flex:1;
-margin:10px;
+/* margin:10px; */
 /* background-color: #0d0d2e; */
-padding:7px;
+padding:0 55px;
 
 }
