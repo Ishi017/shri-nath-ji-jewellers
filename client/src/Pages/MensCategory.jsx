@@ -1,9 +1,7 @@
 import ItemContainer from "../Components/SingleItem/ItemContainer.jsx";
 import "../Styles/MensCategory.css";
 import mensbanner from "../Components/Assets/mensbanner.png";
-import Sidebar from "../Components/Sidebar/Sidebar.jsx";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { FaChevronRight } from "react-icons/fa6";
 
 export default function MensCategory() {
     
@@ -15,11 +13,16 @@ export default function MensCategory() {
       <br></br>
       <hr></hr>
 
-      <div className="menssidebar">
+      {/* <div className="menssidebar">
         <Sidebar />
-      </div>
+      </div> */}
 
       <div className="menscategory">
+      <div className="heading-banner">
+          {" "}
+          <h1>Men&apos;s Jewellery</h1>
+          
+        </div>
         <ItemContainer subCategory="MensCategory" category="men" />
       </div>
     </div>

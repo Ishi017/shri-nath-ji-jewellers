@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import '../../Styles/SingleItem.css';
 import {useNavigate} from 'react-router-dom';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 
 export default function SingleItem({ id, name, image, new_price, old_price}){
@@ -20,7 +21,10 @@ export default function SingleItem({ id, name, image, new_price, old_price}){
              <span className='oldPrice'>{old_price}</span>
           </p>
           <h3>{name}</h3>
-          <p className='cart-singleitem'>"cart icon"</p>
+          <button className="add-single-card">
+            <p>Add to Cart</p>
+            <AiOutlineShoppingCart />
+          </button>
           </div>
         </div>
       );
