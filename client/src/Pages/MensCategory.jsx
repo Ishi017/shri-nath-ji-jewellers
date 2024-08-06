@@ -11,18 +11,12 @@ export default function MensCategory() {
         <img src={mensbanner} alt="" />
       </div>
       <br></br>
-      <hr></hr>
 
       {/* <div className="menssidebar">
         <Sidebar />
       </div> */}
 
       <div className="menscategory">
-      <div className="heading-banner">
-          {" "}
-          <h1>Men&apos;s Jewellery</h1>
-          
-        </div>
         <ItemContainer subCategory="MensCategory" category="men" />
       </div>
     </div>
