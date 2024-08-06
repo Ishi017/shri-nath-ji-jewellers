@@ -52,7 +52,7 @@ export default function ProductPage({ cart, setCart }) {
 
   return (
     <div className="product-detail">
-      <div className="img-container">
+      <div className="">
         <img src={product.image} alt={product.name} className="product-image" />
       </div>
       <div className="product-info">
