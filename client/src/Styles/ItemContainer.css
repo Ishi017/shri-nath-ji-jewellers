@@ -1,8 +1,17 @@
 .subcategory {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 20px;
   align-items: flex-start;
-  justify-content: space-between;
-  padding: 0 10px;
+  justify-content: space-evenly;
+  justify-items:start;
+padding: 0 0.75rem;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .subcategory {
+  
+ 
+  }
+  
 }

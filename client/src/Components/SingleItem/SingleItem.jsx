@@ -16,11 +16,12 @@ export default function SingleItem({ id, name, image, new_price, old_price}){
         <div className="product-card" onClick={handleClick} >
           <img src={image} alt={name} />
           <div className="cardinfo">
+          <p className='singlecard-title'>{name}</p>
           <p>
              <span className='newPrice'>₹{new_price}</span>
              <span className='oldPrice'>{old_price}</span>
           </p>
-          <h3>{name}</h3>
+         
           <button className="add-single-card">
             <p>Add to Cart</p>
             <AiOutlineShoppingCart />

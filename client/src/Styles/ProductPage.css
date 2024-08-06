@@ -4,14 +4,23 @@
     justify-content: center;
     margin: 100px 90px;
     flex-direction: row;
-    background-color:#fffff9;
+    /* background-color:#fffff9; */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .product-image{
     height:500px;
+
     margin-right: 60px;
-    width: 450px;
+    width: 420px;
+    min-width: 380px;
+    border: 0.5px solid #ccc;
+    /* border-radius: 5px; */
+}
+
+.product-image img{
+    height:500px;
+    width: 420px;
 }
 
 .product-info{
