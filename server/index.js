@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 const session = require("express-session");
-
+const stripe = require("stripe")("sk_test_51Pko55P3UdzrLxGiA22dqcOjk02oTV0OyTG1d79SM7eWtjyDX1kPHpjFIZWlftY65Bp2HqmUqSv7DhlU4N06ms1y0006Lfu8jE");
 require("dotenv").config();
 const routes = require("./routes");
 const UserModel = require("./models/Users");
@@ -88,6 +88,35 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((user, done) => {
   done(null, user);
 });
+
+//stripe
+app.post("/api/create-checkout-session", async (req,res) => {
+  const { products } = req.body;
+
+  const lineItems = products.map((product) => ({
+    price_data : {
+      currency : "inr",
+      product_data : {
+        name : product.name,
+      },
+       unit_amount : product.new_price*100,
+    },
+      quantity : product.quantity
+  }));
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types : ["card"],
+    line_items : lineItems,
+    mode : "payment",
+    success_url : `${process.env.FRONTEND_LINK}`,
+    cancel_url : `${process.env.FRONTEND_LINK}/cancel`,
+  });
+  
+  res.json({ id:session.id })
+})
+
+
+//stripe-end
 
 app.get("/login/success", async (req, res) => {
   if (req.user) {

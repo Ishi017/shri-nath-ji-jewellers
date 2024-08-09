@@ -43,5 +43,48 @@ flex:1;
 /* margin:10px; */
 /* background-color: #0d0d2e; */
 padding:0 55px;
+}
 
+/*smartphones*/
+@media (max-width: 600px) {
+
+  .womensbanner {
+    display: none;
+  }
+
+  .womenscategory {
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+/*tablets*/
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .womensbanner{
+    height:200px;
+    margin:35px;
+  }
+
+  .womensbanner img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .womenscategory {
+    margin: 5px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1224px) {
+  .womensbanner{
+    height:230px;
+    margin:50px;
+  }
+
+  .womensbanner img {
+    max-width: 100%;
+    max-height: 250px;
+  }
 }

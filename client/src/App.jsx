@@ -13,6 +13,7 @@ import { useState } from "react";
 import ShopbyCategory from "./Pages/ShopbyCategory.jsx";
 import { Toaster } from "react-hot-toast";
 import UserDetails from "./Pages/UserDetails";
+import SuccessPopup from "./Components/subcomponents/Success.jsx"
 // import ItemContainer from "./Components/SingleItem/ItemContainer";
 // import ProductRings from "./Components/subcomponents/ProductRings";
 
@@ -113,6 +114,20 @@ function App() {
         </>
       ),
     },
+    {
+      path: "/success",
+      element: (
+        <>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
+          <div className="content-container">
+            <SuccessPopup />
+          </div>
+        </>
+      ),
+    },
+
 
 
     // {
@@ -191,7 +206,10 @@ function App() {
               path="/userinfo"
               element={<UserDetails />}
             />
-            
+            <Route
+            path="/successPayment"
+            element={<SuccessPopup/>}
+           />            
           </Routes>
         </div>
       </BrowserRouter>

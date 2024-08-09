@@ -93,9 +93,9 @@
   /* smartphones */
   @media (max-width: 600px) {
     .product-card {
-      height: 300px;
+      height: 335px;
       width: 200px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
   
     .product-card img {
@@ -113,11 +113,11 @@
     }
   
     .oldPrice {
-      font-size: 10px;
+      font-size: 15px;
     }
 
     .add-single-card{
-     
+     margin-bottom: 40px;
     }
     
     .add-single-card p{
@@ -129,15 +129,17 @@
   /* tablets*/
   @media (min-width: 601px) and (max-width: 1124px) {
     .product-card {
-      height: 380px;
+      height: 390px;
       width: 220px;
       margin-bottom: 25px;
+      border-radius: 1.075em;
 
     }
   
     .product-card img {
       height: 200px;
       width: 220px;
+      border-radius: 17px 17px 0 0;
     }
   
     .singlecard-title{

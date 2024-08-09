@@ -39,18 +39,10 @@
 
 /*smartphones*/
 @media (max-width: 600px) {
-  .menssidebar {
-    display: none;
-  }
 
   .mensbanner {
     display: none;
   }
-
-  /* .mensbanner img {
-      max-width: 100%;
-      max-height: 200px;
-    } */
 
   .menscategory {
     margin: 0;
@@ -60,9 +52,11 @@
 
 /*tablets*/
 @media (min-width: 601px) and (max-width: 1024px) {
-  /* .menssidebar {
-      display: none;
-    } */
+
+  .mensbanner{
+    height:200px;
+    margin:35px;
+  }
 
   .mensbanner img {
     max-width: 100%;
@@ -72,5 +66,17 @@
   .menscategory {
     margin: 5px;
     padding: 10px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1224px) {
+  .mensbanner{
+    height:230px;
+    margin:50px;
+  }
+
+  .mensbanner img {
+    max-width: 100%;
+    max-height: 250px;
   }
 }

@@ -12,10 +12,6 @@ export default function MensCategory() {
       </div>
       <br></br>
 
-      {/* <div className="menssidebar">
-        <Sidebar />
-      </div> */}
-
       <div className="menscategory">
         <ItemContainer subCategory="MensCategory" category="men" />
       </div>
