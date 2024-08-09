@@ -157,3 +157,11 @@
     height: 73vh;
     border-radius: 8px;
 }
+
+@media (max-width: 750px) {
+
+  .cart-banner  {
+   display: none;
+}
+
+}

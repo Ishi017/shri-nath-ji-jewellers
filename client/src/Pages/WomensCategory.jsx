@@ -12,10 +12,6 @@ export default function WomensCategory() {
       <hr></hr>
 
       <div className="womenscategory">
-        <div className="heading-banner">
-          {" "}
-          <h1>Women&apos;s Jewellery</h1>
-        </div>
         <ItemContainer subCategory="WomensCategory" category="women" />
       </div>
     </div>

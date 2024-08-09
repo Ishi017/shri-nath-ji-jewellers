@@ -3,8 +3,11 @@ import '../Styles/Cart.css';
 import cartBanner from '../Components/Assets/cartBanner.png';
 import { IoAdd } from "react-icons/io5";
 import { RiSubtractFill } from "react-icons/ri";
+import { loadStripe } from '@stripe/stripe-js';
+import toast from 'react-hot-toast';
 
 export default function Cart({cart, setCart}){
+
 
     const removeFromCart = (id) => {
         const updatedCart = cart.filter(item => item.id !== id);
@@ -17,6 +20,35 @@ export default function Cart({cart, setCart}){
                 item.id === id ? { ...item, quantity: newQuantity } : item
             );
             setCart(updatedCart);
+        }
+    };
+
+    const makePayment = async () => {
+        const stripe = await loadStripe(import.meta.env.VITE_STRIPE_KEY);
+        const body = { products: cart };
+        const headers = { "Content-Type": "application/json" };
+    
+        try {
+            const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/create-checkout-session`, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(body)
+            });
+    
+            const session = await response.json();
+            const result = await stripe.redirectToCheckout({ sessionId: session.id });
+    
+            console.log(response);
+            console.log("RESULT", result);
+
+            if (result.error) {
+                console.log(result.error);
+            } else {
+                toast.success('Payment Successful!');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            toast.error('Payment failed. Please try again.');
         }
     };
 
@@ -51,13 +83,17 @@ export default function Cart({cart, setCart}){
             ))}
             <div className="cart-total">
                 <h3>Total: Rs.{getTotalPrice()}</h3>
-                <Link to="/checkout"><button className="checkout-button">Proceed to Checkout</button></Link>
+                <button onClick={ makePayment } className="checkout-button">Proceed to Checkout</button>
             </div>
         </div>
         <div className="cart-banner">
             <img src={cartBanner} alt="" />
-
         </div>
         </div>
     );
 };
+
+
+
+
+
