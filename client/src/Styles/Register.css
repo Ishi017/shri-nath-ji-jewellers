@@ -41,9 +41,6 @@
   margin-right: 10px;
 }
 
-.spacing {
-}
-
 .css-art2ul-ValueContainer2 {
   padding: 10px !important;
 }
@@ -106,17 +103,17 @@
 
 .separator::before,
 .separator::after {
-  content: '';
+  content: "";
   flex: 1;
   border-bottom: 1px solid #333; /* Adjust line color as needed */
   margin: 0 10px; /* Adjust spacing as needed */
 }
 
-.separator span{
+.separator span {
   color: black;
 }
 
-.oAuth{
+.oAuth {
   height: 60px;
   border-radius: 4px;
   border: 1px solid #ddd;
@@ -130,15 +127,65 @@
   cursor: pointer;
 }
 
-.oAuth:hover{
+.oAuth:hover {
+  background-color: #f0f0f0;
+}
+.oAuthRegister {
+  height: 60px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.oAuthRegister:hover {
   background-color: #f0f0f0;
 }
 
-.googleIcon{
+.googleIcon {
   font-size: 25px;
   margin-right: 15px;
 }
 
 .submitButton:hover {
   background: #4c586e;
+}
+
+@media (max-width: 1024px) {
+  .formRegister {
+    margin: 5px auto;
+  }
+  .registerBanner {
+    width: 40%;
+  }
+}
+
+@media (max-width: 800px) {
+  .registerBanner {
+    display: none;
+  }
+}
+
+@media (max-width: 470px) {
+  .formRegister {
+    width: 90%;
+  }
+
+  .formHeading{
+    font-size: 24px;
+  }
+
+  .inputField{
+    padding: 14px 16px;
+  }
+
+  .css-art2ul-ValueContainer2{
+    padding: 6px !important;
+  }
 }

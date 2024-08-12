@@ -5,6 +5,7 @@ import "../Styles/ProductPage.css";
 import addToCartSound from "../Components/Assets/add-to-cart.mp3";
 import { IoAdd } from "react-icons/io5";
 import { RiSubtractFill } from "react-icons/ri";
+import toast from "react-hot-toast";
 
 export default function ProductPage({ cart, setCart }) {
   const { id } = useParams();
@@ -39,11 +40,12 @@ export default function ProductPage({ cart, setCart }) {
       setCart([...cart, newItem]);
     }
 
-    setShowMessage(true);
+    // setShowMessage(true);
+    toast.success("Item added to cart!")
     if (audioRef.current) {
       audioRef.current.play();
     }
-    setTimeout(() => setShowMessage(false), 3000);
+    // setTimeout(() => setShowMessage(false), 3000);
   };
 
   if (!product) {
@@ -79,10 +81,10 @@ export default function ProductPage({ cart, setCart }) {
             <button className="add-to-cart" onClick={addToCart}>
               Add to Cart
             </button>
-            <button className="buy-it-now">Buy it Now</button>
+            <button className="buy-it-now">Buy Now</button>
           </div>
         </div>
-        {showMessage && <div className="cart-message">Item added to cart!</div>}
+        {/* {showMessage && <div className="cart-message">Item added to cart!</div>} */}
 
         <p className="productDescription">{product.description}</p>
       </div>

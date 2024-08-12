@@ -13,6 +13,8 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../Features/isLoggedInSlice";
 import toast from "react-hot-toast";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 
 export default function Navbar({ cart }) {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -159,6 +161,8 @@ export default function Navbar({ cart }) {
 
         <div className="nav-login-cart">
           {/* LOGIN_LOGOUT */}
+          <GiHamburgerMenu  className="hamburger"/>
+
           {isLoggedIn ? (
             <>
               {/* Show profile dropdown menu if user is logged in */}
@@ -233,6 +237,10 @@ export default function Navbar({ cart }) {
 
           {/* Display number of items in the cart */}
           <div className="cart-count">{cart.length}</div>
+
+          
+          
+
         </div>
       </div>
 

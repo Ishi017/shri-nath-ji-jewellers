@@ -100,7 +100,7 @@ const Register = () => {
           <div className="separator">
             <span>Or</span>
           </div>
-            <button type="submit" className="oAuth">
+            <button type="submit" className="oAuthRegister">
               <FcGoogle className="googleIcon" />
               Continue with Google
             </button>

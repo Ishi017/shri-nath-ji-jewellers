@@ -9,7 +9,7 @@ export default function MenWomenDisplay(){
         <div className="category-recepient">
  
          <h1>Shop by Recepient</h1>
-         <br></br>
+         <br className='br'></br>
 
            <div className="category-pictures">
                
