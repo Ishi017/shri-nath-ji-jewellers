@@ -1,19 +1,29 @@
-import { useParams } from "react-router-dom";
-import { useState, useRef } from "react";
-import all_product from "../Components/Assets/AllProducts.js";
+import { useParams, Link  } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import axios from "axios";
 import "../Styles/ProductPage.css";
 import addToCartSound from "../Components/Assets/add-to-cart.mp3";
 import { IoAdd } from "react-icons/io5";
 import { RiSubtractFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
 
 export default function ProductPage({ cart, setCart }) {
   const { id } = useParams();
-  const product = all_product.find((prod) => prod.id === parseInt(id));
 
   const [count, setCount] = useState(1);
   const [showMessage, setShowMessage] = useState(false);
   const audioRef = useRef(null);
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    const fetchProductbyId = () => {
+    axios
+    .get(`${import.meta.env.VITE_APP_BASE_URL}/product/${id}`)
+    .then(response => setProduct(response.data))
+    .catch(error => console.error('Error fetching product:', error));
+  };
+
+  fetchProductbyId();
+ } , [id]);
 
   function handleIncrement() {
     setCount(count + 1);
@@ -48,7 +58,7 @@ export default function ProductPage({ cart, setCart }) {
   };
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>Loading product...</div>;
   }
 
   return (

@@ -151,6 +151,19 @@ app.get('/products', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+// Backend route to get a product by ID
+app.get('/product/:id', async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const product = await Product.findById(productId); 
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    res.json(product);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 
 //filtering
