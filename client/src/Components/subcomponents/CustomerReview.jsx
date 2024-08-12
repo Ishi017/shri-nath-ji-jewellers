@@ -1,5 +1,4 @@
 import React from 'react';
-import InstaLogo from '../Assets/InstaLogo.png';
 import '../../Styles/CustomerReview.css'
 
 const CustomerReview = ({ name, comment }) => {
@@ -7,7 +6,7 @@ const CustomerReview = ({ name, comment }) => {
         
         <div className="CustomerReview">
             
-            <img src={InstaLogo} alt="" />
+            
             <br></br> <br></br>
             <h3>{name}</h3>
            

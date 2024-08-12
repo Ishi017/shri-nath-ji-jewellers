@@ -1,0 +1,25 @@
+.return-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #0d0d2e;
+    text-align: justify;
+}
+
+.return-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.return-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3.5rem;
+}
+
+.return-link {
+    color: #0d0d2e;
+    text-decoration: underline;
+}

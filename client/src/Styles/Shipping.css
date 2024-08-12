@@ -1,0 +1,25 @@
+.shipping-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #0d0d2e;
+    text-align: justify;
+}
+
+.shipping-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.shipping-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.shipping-link {
+    color: #0d0d2e;
+    text-decoration: underline;
+}

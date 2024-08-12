@@ -55,14 +55,13 @@ export default function About() {
           </div>
         </div>
 
-        <div className="Info">
+        <div className="About-page-info">
           <h3>Info</h3>
           <br></br>
 
-          <h4>Shipping</h4>
-          <h4>Return Policy</h4>
-          <h4>FAQs</h4>
-          <h4>Terms of Service</h4>
+          <Link to="/shipping"><h4>Shipping</h4></Link>
+          <Link to="/return-policy"><h4>Return Policy</h4></Link>
+          <Link to="/faqs"><h4>FAQs</h4></Link>
         </div>
 
         <div className="ContactUs">

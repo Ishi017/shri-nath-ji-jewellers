@@ -13,11 +13,6 @@
     height: auto;
   }
 
-.CustomerReview img{
-    height:50px;
-    border-radius: 6px;
-    margin-top: 50px;;
-}
 
 .CustomerReview h3 {
     margin: 0 0 10px;
@@ -39,14 +34,17 @@
 @media (max-width: 600px) {
     .CustomerReview {
       padding: 15px;
+      width: 200px;
+      height:auto;
+      justify-content: space-around;
     }
   
     .CustomerReview h3 {
-      font-size: 1em;
+      font-size: 0.81em;
     }
   
     .CustomerReview p {
-      font-size: 0.9em;
+      font-size: 0.67em;
     }
   }
   
@@ -58,10 +56,10 @@
     }
   
     .CustomerReview h3 {
-      font-size: 1.1em;
+      font-size: 1em;
     }
   
     .CustomerReview p {
-      font-size: 0.95em;
+      font-size: 0.85em;
     }
   }

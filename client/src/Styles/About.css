@@ -64,6 +64,11 @@
   height: 300px;
 }
 
+.About-page-info a{
+text-decoration: none;
+color: #f0f4ef;
+}
+
 @media (max-width : 800px){
  .KnowUsElements h3,h4{
   font-size: smaller;

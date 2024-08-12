@@ -8,7 +8,7 @@ import "../Styles/Shop.css";
 
 export default function Shop() {
   return (
-    <div>
+    <div className="shop-page">
       <div style={{zIndex:"1"}}>
       <Swipeboard />
       </div>

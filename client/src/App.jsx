@@ -14,6 +14,9 @@ import ShopbyCategory from "./Pages/ShopbyCategory.jsx";
 import { Toaster } from "react-hot-toast";
 import UserDetails from "./Pages/UserDetails";
 import SuccessPopup from "./Components/subcomponents/Success.jsx"
+import ShippingDetails from "./Components/AboutUs/Shipping";
+import ReturnPolicy from "./Components/AboutUs/ReturnPolicy";
+import FAQs from "./Components/AboutUs/FAQs";
 // import ItemContainer from "./Components/SingleItem/ItemContainer";
 // import ProductRings from "./Components/subcomponents/ProductRings";
 
@@ -127,6 +130,19 @@ function App() {
         </>
       ),
     },
+    {
+      path: "/shipping",
+      element: (
+        <>
+          <div className="Navbar">
+            <Navbar cart={cart} />
+          </div>
+          <div className="content-container">
+            <ShippingDetails />
+          </div>
+        </>
+      ),
+    },
 
 
 
@@ -209,7 +225,19 @@ function App() {
             <Route
             path="/successPayment"
             element={<SuccessPopup/>}
-           />            
+           />   
+            <Route
+            path="/shipping"
+            element={<ShippingDetails/>}
+           />    
+           <Route
+            path="/return-policy"
+            element={<ReturnPolicy/>}
+           />    
+           <Route
+            path="/faqs"
+            element={<FAQs/>}
+           />       
           </Routes>
         </div>
       </BrowserRouter>

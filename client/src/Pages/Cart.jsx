@@ -5,6 +5,7 @@ import { IoAdd } from "react-icons/io5";
 import { RiSubtractFill } from "react-icons/ri";
 import { loadStripe } from '@stripe/stripe-js';
 import toast from 'react-hot-toast';
+import emptyCart from '../Components/Assets/emptycart.png';
 
 export default function Cart({cart, setCart}){
 
@@ -32,7 +33,7 @@ export default function Cart({cart, setCart}){
             const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/create-checkout-session`, {
                 method: 'POST',
                 headers: headers,
-                body: JSON.stringify(body)
+                body: JSON.stringify(body),
             });
     
             const session = await response.json();
@@ -57,7 +58,13 @@ export default function Cart({cart, setCart}){
     };
 
     if (cart.length === 0) {
-        return <div className="cart-empty">Your cart is empty.</div>;
+        return (
+        <div className="cart-empty">
+             <p className='empty-cart-heading'>Your cart is empty &#58;&#40;</p>
+             <img src={emptyCart} alt="" />
+             <p className='empty-cart-text'>Add something to make me happy !</p>
+        </div>
+        )
     }
 
     return (

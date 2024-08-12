@@ -1,9 +1,4 @@
-.scroll-container {
-    /* display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: center;
-    margin:15px; */
+.testimonial-scroll-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -13,6 +8,7 @@
 .Testimonials h1{
     text-align: center;
     color: #0d0d2e;
+    margin-bottom: 15px;
 }
 
 .Testimonials{
@@ -20,4 +16,30 @@
     margin-bottom: 140px;
     padding: 0 20px;
 }
+
+.testimonials-heading{   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials-heading img{
+    height:40px;
+}
+
+@media (max-width : 700px){
+
+    .Testimonials{
+        margin-top: 90px;
+        margin-bottom: 90px;
+        /* padding: 0 20px; */
+    }
+
+    .testimonial-scroll-container {
+        gap: 8px; 
+    }
+
+}
+
+
 

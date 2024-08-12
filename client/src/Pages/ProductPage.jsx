@@ -5,6 +5,7 @@ import "../Styles/ProductPage.css";
 import addToCartSound from "../Components/Assets/add-to-cart.mp3";
 import { IoAdd } from "react-icons/io5";
 import { RiSubtractFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export default function ProductPage({ cart, setCart }) {
   const { id } = useParams();
@@ -79,7 +80,7 @@ export default function ProductPage({ cart, setCart }) {
             <button className="add-to-cart" onClick={addToCart}>
               Add to Cart
             </button>
-            <button className="buy-it-now">Buy it Now</button>
+           <Link to="/cart"> <button onClick={addToCart} className="buy-it-now">Buy it Now</button></Link>
           </div>
         </div>
         {showMessage && <div className="cart-message">Item added to cart!</div>}

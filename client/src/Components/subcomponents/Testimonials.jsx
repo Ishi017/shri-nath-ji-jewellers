@@ -1,8 +1,7 @@
 
 import CustomerReview from '../subcomponents/CustomerReview';
 import '../../Styles/Testimonials.css';
-
-
+import InstaLogo from '../Assets/InstaLogo.png';
 
 const reviews = [
     { id:1, name: 'Pippo', comment:'“Beautifully crafted silver jewelry at reasonable prices. My new necklace is my favorite piece now! Fast shipping and friendly service. 📦⭐️⭐️⭐️⭐️⭐️”'},
@@ -14,8 +13,12 @@ export default function Testimonials(){
 
     return(
         <div class="Testimonials">
-        <h1>Feedback!</h1>
-         <div className='scroll-container'>
+            <div className="testimonials-heading">
+            <h1>Feedback!</h1> 
+            <img src={InstaLogo} alt="" />
+            </div>
+       
+         <div className='testimonial-scroll-container'>
     
             {reviews.map((review) => (
                 <CustomerReview

@@ -9,7 +9,7 @@ const stripe = require("stripe")("sk_test_51Pko55P3UdzrLxGiA22dqcOjk02oTV0OyTG1d
 require("dotenv").config();
 const routes = require("./routes");
 const UserModel = require("./models/Users");
-
+const Product = require('./models/Products');
 const app = express();
 
 app.use(
@@ -89,6 +89,29 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+app.get("/login/success", async (req, res) => {
+  if (req.user) {
+    res.status(200).json({ message: "user Login", user: req.user });
+  } else {
+    res.status(400).json({ message: "Not Authorized" });
+  }
+});
+
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: `${process.env.FRONTEND_LINK}/mens-category`,
+    failureRedirect: `${process.env.FRONTEND_LINK}`,
+  })
+);
+
+app.use("/", routes);
+
 //stripe
 app.post("/api/create-checkout-session", async (req,res) => {
   const { products } = req.body;
@@ -118,28 +141,35 @@ app.post("/api/create-checkout-session", async (req,res) => {
 
 //stripe-end
 
-app.get("/login/success", async (req, res) => {
-  if (req.user) {
-    res.status(200).json({ message: "user Login", user: req.user });
-  } else {
-    res.status(400).json({ message: "Not Authorized" });
+//datafetch
+// Get all products
+app.get('/products', async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 });
 
-app.get(
-  "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
 
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    successRedirect: `${process.env.FRONTEND_LINK}/mens-category`,
-    failureRedirect: `${process.env.FRONTEND_LINK}`,
-  })
-);
+//filtering
+// app.get('/products/search', async (req, res) => {
+//   try {
+//     const { category } = req.query;
+//     const filter = {};
 
-app.use("/", routes);
+//     if (category) filter.category = category;
+//     if (item) filter.item = item;
+   
+//     const products = await Product.find(filter);
+//     res.json(products);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
+
+
 
 mongoose
   .connect(`mongodb+srv://${process.env.DB_CONNECTION_STRING}`)
