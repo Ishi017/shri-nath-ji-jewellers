@@ -41,6 +41,12 @@ img{
     color:#ffffff
 }
 
+@media(max-width:1380px){
+  .boards{
+    margin: 0;
+  }
+}
+
 @media( max-width: 900px) {
   .boards{
     height:100px;

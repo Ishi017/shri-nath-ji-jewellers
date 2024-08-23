@@ -83,6 +83,20 @@ export default function About() {
           <h4>- pankjain211@gmail.com</h4>
         </div>
       </div>
+
+      <div className="ContactUsMobile">
+          <h3>Contact Us</h3>
+          <h4>
+            For any suggestions, queries
+            <br /> or complaints please contact us:
+          </h4>
+          <h4>Shree Nath Ji Jewellers</h4>
+          <h5>
+            Whole Seller of :<br /> All Kinds of Silver Jewellery & Units
+          </h5>
+          <h4> B-5, Punjabi Basti, Nangloi, Delhi-110041</h4>
+          <h4>- pankjain211@gmail.com</h4>
+        </div>
       <div className="about-logo">
       <Link to="https://www.nathdwaratemple.org">
         {" "}
