@@ -35,7 +35,6 @@ const ReturnPolicy = () => {
                 Our customer service team is here to assist you with any questions or concerns you may have about our return policy. We are committed to making your shopping experience with Shri Nath Ji Jewellers as enjoyable and worry-free as possible. Thank you for choosing us, and we look forward to serving you again.
             </p>
         </div>
-        <About/>
         </>
     );
 };

@@ -45,7 +45,6 @@ const FAQs = () => {
                 <strong>If your question wasn’t answered here, don’t worry! We’re just a call or email away and ready to help you with any other queries you may have.</strong>
             </p>
         </div>
-        <About/>
         </>
     );
 };
