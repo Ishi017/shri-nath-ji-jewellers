@@ -56,7 +56,7 @@ export default function Shop() {
       <hr />
       <Testimonials />
       <img className="PromisesBanner" src={PromisesBanner} alt="Our Promises Banner" />
-      <About />
+      {/* <About /> */}
     </div>
   );
 }

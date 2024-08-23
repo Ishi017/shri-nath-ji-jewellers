@@ -68,6 +68,11 @@
   font-weight: 600;
 }
 
+.About-page-info a{
+  text-decoration: none;
+  color: white;
+}
+
 @media (max-width: 800px) {
   .KnowUsElements h3,
   h4 {

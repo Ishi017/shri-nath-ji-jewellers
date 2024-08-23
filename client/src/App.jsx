@@ -19,6 +19,7 @@ import SuccessPopup from "./Components/subcomponents/Success.jsx"
 import ShippingDetails from "./Components/AboutUs/Shipping";
 import ReturnPolicy from "./Components/AboutUs/ReturnPolicy";
 import FAQs from "./Components/AboutUs/FAQs";
+import About from "./Components/AboutUs/About.jsx";
 // import ItemContainer from "./Components/SingleItem/ItemContainer";
 // import ProductRings from "./Components/subcomponents/ProductRings";
 
@@ -74,6 +75,7 @@ function App() {
            />       
           </Routes>
         </div>
+        <About />
     </>
   );
 }

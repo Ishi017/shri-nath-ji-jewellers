@@ -11,7 +11,6 @@ export default function ProductPage({ cart, setCart }) {
   const { id } = useParams();
 
   const [count, setCount] = useState(1);
-  const [showMessage, setShowMessage] = useState(false);
   const audioRef = useRef(null);
   const [product, setProduct] = useState(null);
 
@@ -51,12 +50,24 @@ export default function ProductPage({ cart, setCart }) {
       setCart([...cart, newItem]);
     }
 
-    // setShowMessage(true);
     toast.success("Item added to cart!")
     if (audioRef.current) {
       audioRef.current.play();
     }
-    // setTimeout(() => setShowMessage(false), 3000);
+  };
+  const buyItNow = () => {
+    const existingItem = cart.find((item) => item.id === product.id);
+
+    if (!existingItem) {
+       
+      const newItem = { ...product, quantity: count };
+      setCart([...cart, newItem]);
+    }
+
+    if(!existingItem)toast.success("Item added to cart!")
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
   };
 
   if (!product) {
@@ -92,7 +103,7 @@ export default function ProductPage({ cart, setCart }) {
             <button className="add-to-cart" onClick={addToCart}>
               Add to Cart
             </button>
-           <Link to="/cart"> <button onClick={addToCart} className="buy-it-now">Buy it Now</button></Link>
+           <Link to="/cart"> <button onClick={buyItNow} className="buy-it-now">Buy it Now</button></Link>
           </div>
         </div>
         {/* {showMessage && <div className="cart-message">Item added to cart!</div>} */}
