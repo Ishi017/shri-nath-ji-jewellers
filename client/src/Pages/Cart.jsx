@@ -54,7 +54,7 @@ export default function Cart({cart, setCart}){
     };
 
     const getTotalPrice = () => {
-        return cart.reduce((total, item) => total + item.new_price * item.quantity, 0);
+        return cart.reduce((total, item) => total + item.newPrice * item.quantity, 0);
     };
 
     if (cart.length === 0) {
@@ -72,11 +72,11 @@ export default function Cart({cart, setCart}){
         <div className="cart">
             <h2>Your Cart</h2>
             {cart.map(item => (
-                <div key={item.id} className="cart-item">
+                <div key={item._id} className="cart-item">
                     <img src={item.image} alt={item.name} />
                     <div className="cart-item-details">
                         <h3>{item.name}</h3>
-                        <p>Price: Rs.{item.new_price}</p>
+                        <p>Price: Rs.{item.newPrice}</p>
                         <div className="cart-quantity">
                             <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)}><RiSubtractFill/></button>
                             {item.quantity}

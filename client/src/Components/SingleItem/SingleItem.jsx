@@ -31,7 +31,7 @@ export default function SingleItem({ id, name, image, new_price, old_price }) {
 };
 
 SingleItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   new_price: PropTypes.number.isRequired,

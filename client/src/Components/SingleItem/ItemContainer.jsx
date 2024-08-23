@@ -34,7 +34,7 @@ function ItemContainer({ category, item }) {
       {filteredProducts.map((product) => (
         <SingleItem
           key={product._id}
-          id={product.id}
+          id={product._id}
           name={product.name}
           image={product.image}
           new_price={product.newPrice}

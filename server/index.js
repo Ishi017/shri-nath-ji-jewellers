@@ -21,6 +21,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+
 app.use(
   session({
     secret: "ddlbljdaljbaljbludkbdg",
@@ -112,7 +113,11 @@ app.get(
 
 app.use("/", routes);
 
+
+
+
 //stripe
+
 app.post("/api/create-checkout-session", async (req,res) => {
   const { products } = req.body;
 
@@ -122,7 +127,7 @@ app.post("/api/create-checkout-session", async (req,res) => {
       product_data : {
         name : product.name,
       },
-       unit_amount : product.new_price*100,
+       unit_amount : product.newPrice*100,
     },
       quantity : product.quantity
   }));
@@ -131,6 +136,10 @@ app.post("/api/create-checkout-session", async (req,res) => {
     payment_method_types : ["card"],
     line_items : lineItems,
     mode : "payment",
+    billing_address_collection: "required",
+    shipping_address_collection: {
+      allowed_countries: ['IN', 'US'], // Add more countries as needed
+    },
     success_url : `${process.env.FRONTEND_LINK}`,
     cancel_url : `${process.env.FRONTEND_LINK}/cancel`,
   });
@@ -138,8 +147,64 @@ app.post("/api/create-checkout-session", async (req,res) => {
   res.json({ id:session.id })
 })
 
+//stripe webhook
+const endpointSecret = "whsec_772004fd8c6bd26732bca52d94e1e555d590d358fa03250cff8a6a59c61527ce";
 
+app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+    console.log("Webhook verified", event);
+  } catch (err) {
+    console.error("Webhook Error:", err.message);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  switch (event.type) {
+    case 'checkout.session.completed':
+      const session = event.data.object;
+      console.log('Payment was successful!', session);
+      break;
+
+    case 'payment_intent.payment_failed':
+      const paymentIntent = event.data.object;
+      console.log('Payment failed:', paymentIntent.last_payment_error?.message);
+      break;
+
+    default:
+      console.log(`Unhandled event type ${event.type}`);
+  }
+  // Return a 200 response to acknowledge receipt of the event
+  response.send().end();
+});
+
+// Route to check the payment status
+app.get('/api/order-status/:sessionId', async (req, res) => {
+  const { sessionId } = req.params;
+
+  try {
+    // Retrieve the session from Stripe
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+    // Check if the payment was successful or failed
+    if (session.payment_status === 'paid') {
+      return res.json({ status: 'paid' });
+    } else if (session.payment_status === 'failed') {
+      return res.json({ status: 'failed' });
+    } else {
+      return res.json({ status: 'pending' });
+    }
+  } catch (error) {
+    console.error("Error fetching payment status:", error);
+    return res.status(500).json({ status: 'error', message: error.message });
+  }
+});
 //stripe-end
+
+
+
 
 //datafetch
 // Get all products
@@ -164,23 +229,6 @@ app.get('/product/:id', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
-
-//filtering
-// app.get('/products/search', async (req, res) => {
-//   try {
-//     const { category } = req.query;
-//     const filter = {};
-
-//     if (category) filter.category = category;
-//     if (item) filter.item = item;
-   
-//     const products = await Product.find(filter);
-//     res.json(products);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// });
 
 
 

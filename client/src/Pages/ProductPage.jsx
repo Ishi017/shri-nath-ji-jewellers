@@ -68,13 +68,13 @@ export default function ProductPage({ cart, setCart }) {
       </div>
       <div className="product-info">
         <h2>{product.name}</h2>
-        <p>
-          <span className="newPrice">Rs.{product.new_price}</span>
-          <span className="oldPrice">Rs.{product.old_price}</span>
+        <div>
+          <span className="newPrice">Rs.{product.newPrice}</span>
+          <span className="oldPrice">Rs.{product.oldPrice}</span>
           <span>
             <p className="taxes-mrp">*MRP is all inclusive of all taxes</p>
           </span>
-        </p>
+        </div>
         <div className="product-buttons">
           <div className="quantity">
             <button onClick={handleDecrement}>
