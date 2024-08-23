@@ -13,6 +13,8 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../Features/isLoggedInSlice";
 import toast from "react-hot-toast";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 
 export default function Navbar({ cart }) {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -20,6 +22,7 @@ export default function Navbar({ cart }) {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const [dropdownTimer, setDropdownTimer] = useState(null);
   const [profileDropdownTimer, setProfileDropdownTimer] = useState(null);
+  const [showMobileNavbar, setShowMobileNavbar] = useState(false);
   const isLoggedIn = useSelector((state) => state.userLogin.isLoggedIn);
   const dispatch = useDispatch();
 
@@ -87,18 +90,6 @@ export default function Navbar({ cart }) {
     setDropdownTimer(timer);
   };
 
-  const handleProfileMouseEnter = () => {
-    clearTimeout(profileDropdownTimer);
-    setShowProfileDropdown(true);
-  };
-
-  const handleProfileMouseLeave = () => {
-    const timer = setTimeout(() => {
-      setShowProfileDropdown(false);
-    }, 2000);
-    setProfileDropdownTimer(timer);
-  };
-
   return (
     <nav className="navbar">
       <div className="navbar-news">
@@ -159,6 +150,15 @@ export default function Navbar({ cart }) {
 
         <div className="nav-login-cart">
           {/* LOGIN_LOGOUT */}
+          {!showMobileNavbar ? (
+            <GiHamburgerMenu
+              className="hamburger"
+              onClick={() => setShowMobileNavbar(true)}
+            />
+          ) : (
+            <IoMdClose className="hamburger" id="close" onClick={()=>setShowMobileNavbar(false)}/>
+          )}
+
           {isLoggedIn ? (
             <>
               {/* Show profile dropdown menu if user is logged in */}
@@ -237,6 +237,14 @@ export default function Navbar({ cart }) {
       </div>
 
       {showLoginPopup && <LoginPopup onClose={handleClosePopup} />}
+
+      {showMobileNavbar && (
+        <div className="mobile-nav">
+          <Link>Shop by Category</Link>
+          <Link>Men&apos;s Jewellery</Link>
+          <Link>Women&apos;s Jewellery</Link>
+        </div>
+      )}
     </nav>
   );
 }

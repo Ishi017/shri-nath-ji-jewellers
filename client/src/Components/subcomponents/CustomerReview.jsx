@@ -1,12 +1,14 @@
 import React from 'react';
 import '../../Styles/CustomerReview.css'
+import { FaInstagram } from 'react-icons/fa6';
 
 const CustomerReview = ({ name, comment }) => {
     return (
         
         <div className="CustomerReview">
             
-            
+            {/* <img src={InstaLogo} alt="" /> */}
+            <FaInstagram className="instaLogo" />
             <br></br> <br></br>
             <h3>{name}</h3>
            

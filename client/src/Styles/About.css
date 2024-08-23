@@ -12,8 +12,8 @@
 .AboutSnj h5 {
   color: #f0f4ef;
   font-weight: 200;
-  margin-left: 10px;
-  margin-bottom: 15px;
+  /* margin-left: 10px; */
+  /* margin-bottom: 15px; */
 }
 
 .AboutSnj h2 {
@@ -25,7 +25,7 @@
   display: flex;
   /* align-items: center; */
   background-color: #0d0d2e;
-  height: 600px;
+  /* height: 600px; */
   justify-content: space-around;
   color: #f0f4ef;
   padding-top: 20px;
@@ -57,36 +57,58 @@
   /* padding-left: 34rem; */
 }
 
-.about-logo{
+.about-logo {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 300px;
 }
 
-.About-page-info a{
-text-decoration: none;
-color: #f0f4ef;
+.AboutSnj h5{
+  font-weight: 600;
 }
 
-@media (max-width : 800px){
- .KnowUsElements h3,h4{
-  font-size: smaller;
+@media (max-width: 800px) {
+  .KnowUsElements h3,
+  h4 {
+    font-size: smaller;
   }
 
-  .LogoBlue{
-   height:250px;
+  .LogoBlue {
+    height: 250px;
   }
 }
 
-@media (max-width : 700px){
-     .LogoBlue{
-    height:200px;
-   }
- }
+@media (max-width: 700px) {
+  .LogoBlue {
+    height: 200px;
+  }
+}
 
 .footer-icon {
   color: #fff;
   font-size: 30px;
   margin: 10px;
+}
+.ContactUsMobile {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .ContactUs {
+    display: none;
+  }
+  .ContactUsMobile {
+    display: block;
+    color: #f0f4ef;
+    padding: 0 70px;
+    text-align: center;
+  }
+  .ContactUsMobile h5{
+    font-weight: 500;
+
+  }
+  .KnowUsElements {
+    height: 100%;
+  }
 }

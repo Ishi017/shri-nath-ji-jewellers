@@ -1,7 +1,7 @@
 .category-recepient{
     height:500px;
-    margin-bottom:120px;
-    margin-top:100px;
+    margin-bottom:100px;
+    margin-top:80px;
 }
 
 .category-pictures{
@@ -31,16 +31,60 @@
     transform: rotate(15deg);
 }
 
-/* smartphones */
-@media (max-width: 600px) {
-    .category-pictures img {
-     height: 300px;
-    }
-  }
   
   /* tablets */
-  @media (min-width: 601px) and (max-width: 1024px) {
+  @media (min-width: 810px) and (max-width: 1024px) {
     .category-pictures img {
       height: 330px;
     }
+  }
+
+  @media (max-width: 810px) {
+    .category-pictures img {
+     height: 280px;
+     width: 220px;
+    }
+  }
+
+  @media (max-width:570px){
+    .category-pictures img {
+        height: 150px;
+        width: 150px;
+       }
+       .category-recepient{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 350px;
+       }
+       .category-recepient h1,.Testimonials h1{
+        font-size: 20px;
+       }
+       .Testimonials{
+        margin:40px 0 ;
+       }
+       .br{
+        display: none;
+       }
+       .CustomerReview br{
+        display: none;
+       }
+       .CustomerReview h6{
+        margin: 0;
+       }
+       .CustomerReview img{
+        margin-top: 0;
+       }
+  }
+
+  @media(max-width:450px){
+    .category-pictures img {
+        height: 120px;
+        width: 120px;
+       }
+       .category-recepient{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 300px;
+       }
+      
   }

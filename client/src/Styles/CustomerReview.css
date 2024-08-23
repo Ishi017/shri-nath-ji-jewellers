@@ -13,6 +13,16 @@
     height: auto;
   }
 
+  .instaLogo{
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+.CustomerReview img{
+    height:50px;
+    border-radius: 6px;
+    margin-top: 50px;;
+}
 
 .CustomerReview h3 {
     margin: 0 0 10px;

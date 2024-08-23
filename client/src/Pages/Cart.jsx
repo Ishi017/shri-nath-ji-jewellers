@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import '../Styles/Cart.css';
 import cartBanner from '../Components/Assets/cartBanner.png';
 import { IoAdd } from "react-icons/io5";

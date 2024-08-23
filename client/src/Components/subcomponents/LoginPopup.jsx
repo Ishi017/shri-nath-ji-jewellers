@@ -27,21 +27,18 @@ const LoginPopup = ({ onClose }) => {
           password,
         },
         {
-          withCredentials: true, // To include cookies in the request
+          withCredentials: true, 
         }
       );
       if (response.data.message === "Logged in successfully") {
-        // Redirect to a different page or show a success message
         dispatch(loginUser(true));
         toast.success("Login successful!");
         onClose();
       } else {
-        // Handle incorrect credentials or other errors
         toast.error(response.data.message);
       }
     } catch (error) {
       console.error("There was an error logging in!", error);
-      // Handle error (e.g., show error message)
       toast.error(error.response.data.message);
     }
   };

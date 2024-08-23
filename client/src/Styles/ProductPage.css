@@ -1,148 +1,215 @@
-.product-detail{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin: 60px 20px ;
-    flex-direction: row;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.product-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 60px 20px;
+  flex-direction: row;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.product-image{
-    height:500px;
-    margin-right: 60px;
-    width: 420px;
-    min-width: 380px;
-    border: 0.5px solid #ccc;
-    /* border-radius: 5px; */
+.product-image {
+  height: 500px;
+  margin-right: 60px;
+  width: 420px;
+  min-width: 380px;
+  border: 0.5px solid #ccc;
+  border-radius: 8px;
 }
 
-.product-image img{
-    height:500px;
-    width: 420px;
+.product-image img {
+  height: 500px;
+  width: 420px;
 }
 
-.img-container{
-    width: 400px;
-    min-width: 80%;
+.img-container {
+  width: 400px;
+  min-width: 80%;
 }
 
-
-.product-info{
-    display: flex;
-    flex-direction: column;
-    max-width: 100%; /* Ensures the container scales down with the screen */
-    width: 550px;
+.product-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%; /* Ensures the container scales down with the screen */
+  width: 550px;
 }
 
-.product-info hr{
-    color: #7c8178;
+.product-info hr {
+  color: #7c8178;
 }
 
-.product-company{
-    font-size: medium;
-    font-weight: 300;
-    color: #7c8178;
+.product-company {
+  font-size: medium;
+  font-weight: 300;
+  color: #7c8178;
 }
 
-.product-info h2{
-    color: #0d0d2e;
-    margin: 0;
+.product-info h2 {
+  color: #0d0d2e;
+  margin: 0;
 }
 
-.taxes-mrp{
-    font-size: 0.8rem;
-    font-weight: 20;
-    color: #7c8178;
+.taxes-mrp {
+  font-size: 0.8rem;
+  font-weight: 20;
+  color: #7c8178;
 }
 
-.newPrice{
-    font-size: 1.5rem;
-    color:#7c8178;
+.newPrice {
+  font-size: 1.5rem;
+  color: #7c8178;
 }
 
-.quantity{
-    width:150px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height:40px;
-    color:#7c8178;
+.quantity {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 40px;
+  color: #7c8178;
 }
 
-.quantity button{
-   border: none;
-   background-color: #fffff9;
-   cursor: pointer;
+.quantity button {
+  border: none;
+  background-color: #fffff9;
+  cursor: pointer;
 }
 
-.buttons-div{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.add-to-cart{
-    height:50px;
-    width:90%;
-    align-items: center;
-    background-color: #fffff9;
-    color: #0d0d2e;
-    border-radius: 4px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+.add-to-cart {
+  height: 50px;
+  width: 90%;
+  align-items: center;
+  background-color: #fffff9;
+  color: #0d0d2e;
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 
-.add-to-cart:hover{
-    background-color: #f0f0f0;
-    
-    /* color: #fffff9; */
+.add-to-cart:hover {
+  background-color: #f0f0f0;
+
+  /* color: #fffff9; */
 }
 
-.buy-it-now{
-    height:50px;
-    width:90%;
-    align-items: center;
-    background-color: #0d0d2e;
-    color: #fffff9;
-    border-radius: 4px;
-    font-size: 16px;
-    border:none;
-    cursor: pointer;
+.buy-it-now {
+  height: 50px;
+  width: 90%;
+  align-items: center;
+  background-color: #0d0d2e;
+  color: #fffff9;
+  border-radius: 4px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-.buy-it-now:hover{
-    background-color: #1a1a5e;
-    /* color: #0d0d2e; */
-    border: 1px solid #0d0d2e;
-    
+.buy-it-now:hover {
+  background-color: #1a1a5e;
+  /* color: #0d0d2e; */
+  border: 1px solid #0d0d2e;
 }
 
 .cart-message {
-    background-color: #d4edda; 
-    color: #155724; 
-    padding: 10px;
-    border: 1px solid #c3e6cb; 
-    border-radius: 5px;
-    position: absolute; 
-    top: 210px; 
-    right: 10px; 
-    z-index: 1000; 
-    width: auto;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px; 
-    font-weight: bold; 
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  position: absolute;
+  top: 210px;
+  right: 10px;
+  z-index: 1000;
+  width: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.productDescription{
-    width:550px;
-    word-wrap: break-word;
-    color: #7c8178;
-    margin-top:30px;
+.productDescription {
+  word-wrap: break-word;
+  color: #7c8178;
+  margin-top: 30px;
+}
+
+@media (max-width: 1100px) {
+  .product-image {
+    width: 350px;
+    height: 430px;
+    margin-right: 40px;
+  }
+
+  .product-info {
+    width: 400px;
+  }
+}
+
+@media (max-width: 910px) {
+  .product-image {
+    width: 170px;
+    height: 400px;
+    margin-right: 20px;
+  }
+
+  .product-info {
+    width: 380px;
+  }
+}
+
+@media (max-width: 800px) {
+  .product-detail {
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .product-image {
+    margin-right: 0;
+  }
+  .add-to-cart,
+  .buy-it-now {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .product-info h2 {
+    font-size: 16px;
+  }
+  .newPrice,
+  .oldPrice {
+    font-size: 14px;
+  }
+
+  .taxes-mrp {
+    font-size: 12px;
+  }
+  .quantity {
+    height: 30px;
+    width: 120px;
+  }
+  .add-to-cart,
+  .buy-it-now {
+    height: 45px;
+  }
+  .product-detail {
+    margin: 60px 40px;
+  }
+  .productDescription {
+    font-size: 14px;
+  }
+  .quantity button {
+    padding-top: 3px;
+  }
 }
