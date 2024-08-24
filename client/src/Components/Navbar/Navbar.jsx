@@ -240,9 +240,9 @@ export default function Navbar({ cart }) {
 
       {showMobileNavbar && (
         <div className="mobile-nav">
-          <Link>Shop by Category</Link>
-          <Link>Men&apos;s Jewellery</Link>
-          <Link>Women&apos;s Jewellery</Link>
+          <Link to="/shopbycategory/Earrings">Shop by Category</Link>
+          <Link to="/mens-category">Men&apos;s Jewellery</Link>
+          <Link to="/womens-category">Women&apos;s Jewellery</Link>
         </div>
       )}
     </nav>
