@@ -5,11 +5,13 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 const session = require("express-session");
-const stripe = require("stripe")("sk_test_51Pko55P3UdzrLxGiA22dqcOjk02oTV0OyTG1d79SM7eWtjyDX1kPHpjFIZWlftY65Bp2HqmUqSv7DhlU4N06ms1y0006Lfu8jE");
+const stripe = require("stripe")(
+  "sk_test_51Pko55P3UdzrLxGiA22dqcOjk02oTV0OyTG1d79SM7eWtjyDX1kPHpjFIZWlftY65Bp2HqmUqSv7DhlU4N06ms1y0006Lfu8jE"
+);
 require("dotenv").config();
 const routes = require("./routes");
 const UserModel = require("./models/Users");
-const Product = require('./models/Products');
+const Product = require("./models/Products");
 const app = express();
 
 app.use(
@@ -20,7 +22,6 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
-
 
 app.use(
   session({
@@ -113,45 +114,43 @@ app.get(
 
 app.use("/", routes);
 
-
-
-
 //stripe
 
-app.post("/api/create-checkout-session", async (req,res) => {
+app.post("/api/create-checkout-session", async (req, res) => {
   const { products } = req.body;
 
   const lineItems = products.map((product) => ({
-    price_data : {
-      currency : "inr",
-      product_data : {
-        name : product.name,
+    price_data: {
+      currency: "inr",
+      product_data: {
+        name: product.name,
       },
-       unit_amount : product.newPrice*100,
+      unit_amount: product.newPrice * 100,
     },
-      quantity : product.quantity
+    quantity: product.quantity,
   }));
 
   const session = await stripe.checkout.sessions.create({
-    payment_method_types : ["card"],
-    line_items : lineItems,
-    mode : "payment",
+    payment_method_types: ["card"],
+    line_items: lineItems,
+    mode: "payment",
     billing_address_collection: "required",
     shipping_address_collection: {
-      allowed_countries: ['IN', 'US'], // Add more countries as needed
+      allowed_countries: ["IN", "US"], // Add more countries as needed
     },
-    success_url : `${process.env.FRONTEND_LINK}`,
-    cancel_url : `${process.env.FRONTEND_LINK}/cancel`,
+    success_url: `${process.env.FRONTEND_LINK}`,
+    cancel_url: `${process.env.FRONTEND_LINK}/cancel`,
   });
-  
-  res.json({ id:session.id })
-})
+
+  res.json({ id: session.id });
+});
 
 //stripe webhook
-const endpointSecret = "whsec_772004fd8c6bd26732bca52d94e1e555d590d358fa03250cff8a6a59c61527ce";
+const endpointSecret =
+  "whsec_772004fd8c6bd26732bca52d94e1e555d590d358fa03250cff8a6a59c61527ce";
 
-app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
-  const sig = req.headers['stripe-signature'];
+app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
+  const sig = req.headers["stripe-signature"];
   let event;
 
   try {
@@ -163,14 +162,14 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   }
 
   switch (event.type) {
-    case 'checkout.session.completed':
+    case "checkout.session.completed":
       const session = event.data.object;
-      console.log('Payment was successful!', session);
+      console.log("Payment was successful!", session);
       break;
 
-    case 'payment_intent.payment_failed':
+    case "payment_intent.payment_failed":
       const paymentIntent = event.data.object;
-      console.log('Payment failed:', paymentIntent.last_payment_error?.message);
+      console.log("Payment failed:", paymentIntent.last_payment_error?.message);
       break;
 
     default:
@@ -181,7 +180,7 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
 });
 
 // Route to check the payment status
-app.get('/api/order-status/:sessionId', async (req, res) => {
+app.get("/api/order-status/:sessionId", async (req, res) => {
   const { sessionId } = req.params;
 
   try {
@@ -189,26 +188,23 @@ app.get('/api/order-status/:sessionId', async (req, res) => {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
 
     // Check if the payment was successful or failed
-    if (session.payment_status === 'paid') {
-      return res.json({ status: 'paid' });
-    } else if (session.payment_status === 'failed') {
-      return res.json({ status: 'failed' });
+    if (session.payment_status === "paid") {
+      return res.json({ status: "paid" });
+    } else if (session.payment_status === "failed") {
+      return res.json({ status: "failed" });
     } else {
-      return res.json({ status: 'pending' });
+      return res.json({ status: "pending" });
     }
   } catch (error) {
     console.error("Error fetching payment status:", error);
-    return res.status(500).json({ status: 'error', message: error.message });
+    return res.status(500).json({ status: "error", message: error.message });
   }
 });
 //stripe-end
 
-
-
-
 //datafetch
 // Get all products
-app.get('/products', async (req, res) => {
+app.get("/products", async (req, res) => {
   try {
     const products = await Product.find();
     res.json(products);
@@ -217,20 +213,18 @@ app.get('/products', async (req, res) => {
   }
 });
 // Backend route to get a product by ID
-app.get('/product/:id', async (req, res) => {
+app.get("/product/:id", async (req, res) => {
   try {
     const productId = req.params.id;
-    const product = await Product.findById(productId); 
+    const product = await Product.findById(productId);
     if (!product) {
-      return res.status(404).json({ message: 'Product not found' });
+      return res.status(404).json({ message: "Product not found" });
     }
     res.json(product);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
-
-
 
 mongoose
   .connect(`mongodb+srv://${process.env.DB_CONNECTION_STRING}`)

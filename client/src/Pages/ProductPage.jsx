@@ -103,10 +103,9 @@ export default function ProductPage({ cart, setCart }) {
             <button className="add-to-cart" onClick={addToCart}>
               Add to Cart
             </button>
-           <Link to="/cart"> <button onClick={buyItNow} className="buy-it-now">Buy it Now</button></Link>
+           <Link to="/cart"> <button onClick={buyItNow} className="buy-it-now">Buy Now</button></Link>
           </div>
         </div>
-        {/* {showMessage && <div className="cart-message">Item added to cart!</div>} */}
 
         <p className="productDescription">{product.description}</p>
       </div>

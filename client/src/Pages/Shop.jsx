@@ -13,37 +13,63 @@ export default function Shop() {
   const location = useLocation();
   const [paymentStatus, setPaymentStatus] = useState(null);
 
+  // useEffect(() => {
+  //   // Get session_id from URL params
+  //   const searchParams = new URLSearchParams(location.search);
+  //   const sessionId = searchParams.get('session_id');
+
+  //   if (sessionId) {
+  //     const pollPaymentStatus = async () => {
+  //       try {
+  //         const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/order-status/${sessionId}`);
+  //         const data = await response.json();
+
+  //         if (data.status === 'paid' || data.status === 'failed') {
+  //           setPaymentStatus(data.status);
+  //           toast.success(`Payment ${data.status}`, { duration: 5000 });
+  //           // Optionally, you can clear the URL params after successful polling
+  //           window.history.replaceState({}, document.title, "/");
+  //           clearInterval(interval); // Stop polling when payment is resolved
+  //         }
+  //       } catch (error) {
+  //         toast.error("Error fetching payment status. Please try again.");
+  //         console.error("Error fetching payment status:", error);
+  //       }
+  //     };
+
+  //     // Poll every 3 seconds until payment status is resolved
+  //     const interval = setInterval(pollPaymentStatus, 3000);
+
+  //     // Cleanup the polling on component unmount
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [location.search]);
+
+
   useEffect(() => {
-    // Get session_id from URL params
-    const searchParams = new URLSearchParams(location.search);
-    const sessionId = searchParams.get('session_id');
+    const paymentInProgress = localStorage.getItem("paymentInProgress");
+    const sessionId = localStorage.getItem("stripeSessionId");
 
-    if (sessionId) {
-      const pollPaymentStatus = async () => {
-        try {
-          const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/order-status/${sessionId}`);
-          const data = await response.json();
-
-          if (data.status === 'paid' || data.status === 'failed') {
-            setPaymentStatus(data.status);
-            toast.success(`Payment ${data.status}`, { duration: 5000 });
-            // Optionally, you can clear the URL params after successful polling
-            window.history.replaceState({}, document.title, "/");
-            clearInterval(interval); // Stop polling when payment is resolved
+    if (paymentInProgress && sessionId) {
+      // Check payment status
+      fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/order-status/${sessionId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "paid") {
+            toast.success("Payment Successful!");
+          } else if (data.status === "failed") {
+            toast.error("Payment failed. Please try again.");
           }
-        } catch (error) {
-          toast.error("Error fetching payment status. Please try again.");
+          // Clear the flag and session id from localStorage
+          localStorage.removeItem("paymentInProgress");
+          localStorage.removeItem("stripeSessionId");
+        })
+        .catch((error) => {
           console.error("Error fetching payment status:", error);
-        }
-      };
-
-      // Poll every 3 seconds until payment status is resolved
-      const interval = setInterval(pollPaymentStatus, 3000);
-
-      // Cleanup the polling on component unmount
-      return () => clearInterval(interval);
+          toast.error("Error fetching payment status.");
+        });
     }
-  }, [location.search]);
+  }, []);
 
   return (
     <div className="shop-page">

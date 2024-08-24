@@ -1,5 +1,5 @@
 // ItemContainer.jsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "../../Styles/ItemContainer.css";
 import SingleItem from "../SingleItem/SingleItem.jsx";
