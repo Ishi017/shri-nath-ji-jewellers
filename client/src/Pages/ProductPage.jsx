@@ -15,6 +15,7 @@ export default function ProductPage({ cart, setCart }) {
   const [count, setCount] = useState(1);
   const audioRef = useRef(null);
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchProductbyId = () => {
@@ -22,6 +23,8 @@ export default function ProductPage({ cart, setCart }) {
         .get(`${import.meta.env.VITE_APP_BASE_URL}/product/${id}`)
         .then(response => setProduct(response.data))
         .catch((error) => console.error("Error fetching product:", error));
+
+        setLoading(false)
     };
 
     fetchProductbyId();
@@ -71,7 +74,7 @@ export default function ProductPage({ cart, setCart }) {
     }
   };
 
-  if (!product) {
+  if (loading) {
     return (
       <div className="lazyLoad">
         <ClipLoader size={60} />;
