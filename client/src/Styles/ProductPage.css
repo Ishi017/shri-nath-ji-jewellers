@@ -102,6 +102,14 @@
   /* color: #fffff9; */
 }
 
+.lazyLoad{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .buy-it-now {
   height: 50px;
   width: 90%;

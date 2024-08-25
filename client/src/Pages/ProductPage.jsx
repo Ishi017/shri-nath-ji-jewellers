@@ -1,4 +1,5 @@
-import { useParams, Link  } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { useParams, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "../Styles/ProductPage.css";
@@ -6,6 +7,7 @@ import addToCartSound from "../Components/Assets/add-to-cart.mp3";
 import { IoAdd } from "react-icons/io5";
 import { RiSubtractFill } from "react-icons/ri";
 import toast from "react-hot-toast";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function ProductPage({ cart, setCart }) {
   const { id } = useParams();
@@ -16,14 +18,14 @@ export default function ProductPage({ cart, setCart }) {
 
   useEffect(() => {
     const fetchProductbyId = () => {
-    axios
-    .get(`${import.meta.env.VITE_APP_BASE_URL}/product/${id}`)
-    .then(response => setProduct(response.data))
-    .catch(error => console.error('Error fetching product:', error));
-  };
+      axios
+        .get(`${import.meta.env.VITE_APP_BASE_URL}/product/${id}`)
+        .then(response => setProduct(response.data))
+        .catch((error) => console.error("Error fetching product:", error));
+    };
 
-  fetchProductbyId();
- } , [id]);
+    fetchProductbyId();
+  }, [id]);
 
   function handleIncrement() {
     setCount(count + 1);
@@ -50,7 +52,7 @@ export default function ProductPage({ cart, setCart }) {
       setCart([...cart, newItem]);
     }
 
-    toast.success("Item added to cart!")
+    toast.success("Item added to cart!");
     if (audioRef.current) {
       audioRef.current.play();
     }
@@ -59,19 +61,22 @@ export default function ProductPage({ cart, setCart }) {
     const existingItem = cart.find((item) => item.id === product.id);
 
     if (!existingItem) {
-       
       const newItem = { ...product, quantity: count };
       setCart([...cart, newItem]);
     }
 
-    if(!existingItem)toast.success("Item added to cart!")
+    if (!existingItem) toast.success("Item added to cart!");
     if (audioRef.current) {
       audioRef.current.play();
     }
   };
 
   if (!product) {
-    return <div>Loading product...</div>;
+    return (
+      <div className="lazyLoad">
+        <ClipLoader size={60} />;
+      </div>
+    );
   }
 
   return (
@@ -99,11 +104,16 @@ export default function ProductPage({ cart, setCart }) {
             </button>
           </div>
           <br />
-          <div  className="buttons-div">
+          <div className="buttons-div">
             <button className="add-to-cart" onClick={addToCart}>
               Add to Cart
             </button>
-           <Link to="/cart"> <button onClick={buyItNow} className="buy-it-now">Buy Now</button></Link>
+            <Link to="/cart">
+              {" "}
+              <button onClick={buyItNow} className="buy-it-now">
+                Buy Now
+              </button>
+            </Link>
           </div>
         </div>
 

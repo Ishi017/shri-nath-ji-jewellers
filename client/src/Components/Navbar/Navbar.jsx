@@ -45,6 +45,7 @@ export default function Navbar({ cart }) {
         setUser(response.data.user);
       } catch (error) {
         console.error("Error fetching user data:", error);
+        toast.error(error)
       }
     };
 
