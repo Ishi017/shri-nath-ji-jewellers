@@ -32,7 +32,7 @@ const LoginPopup = ({ onClose }) => {
       );
       if (response.data.message === "Logged in successfully") {
         dispatch(loginUser(true));
-        toast.success("Login Successful!");
+        toast.success("Login Successful");
         onClose();
       } else {
         toast.error(response.data.message);

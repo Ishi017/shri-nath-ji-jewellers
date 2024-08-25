@@ -39,7 +39,7 @@ export default function Navbar({ cart }) {
           }
         );
         if (!isLoggedIn && response.status === 200)
-          toast.success("Login Successful!");
+          toast.success("Login Successful");
         dispatch(loginUser(true));
 
         setUser(response.data.user);
