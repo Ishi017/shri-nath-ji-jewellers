@@ -21,10 +21,14 @@ export default function ProductPage({ cart, setCart }) {
     const fetchProductbyId = () => {
       axios
         .get(`${import.meta.env.VITE_APP_BASE_URL}/product/${id}`)
-        .then(response => setProduct(response.data))
-        .catch((error) => console.error("Error fetching product:", error));
-
-        setLoading(false)
+        .then(response => {
+          setProduct(response.data);
+          setLoading(false); // Move this here
+        })
+        .catch((error) => {
+          console.error("Error fetching product:", error);
+          setLoading(false); // Ensure loading state is updated on error
+        });
     };
 
     fetchProductbyId();
